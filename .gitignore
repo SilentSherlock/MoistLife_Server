@@ -32,6 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-### My Defind ###
-src/main/resources/application.properties
+### My Definition ###
+*.properties
 logs/
