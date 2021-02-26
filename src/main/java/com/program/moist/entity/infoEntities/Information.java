@@ -2,6 +2,8 @@ package com.program.moist.entity.infoEntities;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * Date: 2021/2/25
  * Author: SilentSherlock
@@ -18,4 +20,5 @@ public class Information {
     private String detail;
     private String info_pictures;
     private int user_id;
+    private Date info_time;
 }

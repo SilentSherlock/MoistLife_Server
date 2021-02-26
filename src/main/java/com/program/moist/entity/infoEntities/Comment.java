@@ -19,4 +19,5 @@ public class Comment {
     private String content;
     private Date com_time;
     private int parent_com_id;
+    private int com_kind;//default 0, deleted 1
 }

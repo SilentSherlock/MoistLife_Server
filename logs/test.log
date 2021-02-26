@@ -1,9 +1,12 @@
-2021-02-25 21:15:55,163 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11.0.5 on YOGA-SherlockZ with PID 8148 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-02-25 21:15:55,169 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-02-25 21:15:55,867 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-02-25 21:15:55,868 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-02-25 21:15:55,868 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-02-25 21:15:55,919 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-02-25 21:15:56,258 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-02-25 21:15:56,280 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 1.362 seconds (JVM running for 2.322) 
-2021-02-25 21:15:56,282 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-02-26 12:14:58,237 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11.0.5 on YOGA-SherlockZ with PID 11600 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-02-26 12:14:58,242 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-02-26 12:14:58,897 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-02-26 12:14:58,897 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-02-26 12:14:58,897 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-02-26 12:14:58,940 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-02-26 12:14:59,332 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-02-26 12:14:59,354 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 1.358 seconds (JVM running for 2.22) 
+2021-02-26 12:14:59,356 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-02-26 12:15:05,310 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-02-26 12:15:05,339 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021-02-26 12:15:05,598 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 

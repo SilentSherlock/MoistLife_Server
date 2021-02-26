@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.program.moist.dao.infoEntities.InformationDao">
+    <resultMap id="infoMap" type="com.program.moist.entity.infoEntities.Information">
+        <id property="info_id" column="info_id"/>
+        <result property="info_title" column="info_title"/>
+        <result property="price" column="price"/>
+        <result property="kind" column="kind"/>
+        <result property="area" column="area"/>
+        <result property="detail" column="detail"/>
+        <result property="info_pictures" column="info_pictures"/>
+        <result property="user_id" column="user_id"/>
+        <result property="info_time" column="info_time"/>
+    </resultMap>
+
+    <select id="getById" resultMap="infoMap">
+        select * from information
+        where info_id = #{infoId};
+    </select>
+    <select id="getByKind" resultMap="infoMap">
+        select * from information
+        where kind = #{kind};
+    </select>
+    <select id="getByArea" resultMap="infoMap">
+        select * from information
+        where area = #{area};
+    </select>
+    <select id="getByUserId" resultMap="infoMap">
+        select * from information
+        where user_id = #{userId};
+    </select>
+
+    <insert id="add">
+        insert into information(info_id, info_title, price, kind, area, detail, info_pictures, user_id, info_time)
+        values (#{info_id}, #{info_title}, #{price}, #{kind}, #{area}, #{detail}, #{info_pictures}, #{user_id}, #{info_time});
+    </insert>
+    <delete id="delete">
+        delete from information
+        where info_id = #{info_id};
+    </delete>
+    <delete id="deleteByUserId">
+        delete from information
+        where info_id = #{info_id} and user_id = #{user_id};
+    </delete>
+    <update id="update">
+        update information set
+            info_title = #{info_title},
+            price = #{price},
+            kind = #{kind},
+            area = #{area},
+            detail = #{detail},
+            info_pictures = #{info_pictures},
+            info_time = #{info_time},
+            user_id = #{user_id}
+        where info_id = #{info_id};
+    </update>
+</mapper>

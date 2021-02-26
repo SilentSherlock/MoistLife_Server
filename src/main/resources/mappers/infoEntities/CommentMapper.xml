@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.program.moist.dao.infoEntities.CommentDao">
+    <resultMap id="commentMap" type="com.program.moist.entity.infoEntities.Comment">
+        <id property="com_id" column="com_id"/>
+        <result property="from_user_id" column="from_user_id"/>
+        <result property="from_user_id" column="to_user_id"/>
+        <result property="post_id" column="post_id"/>
+        <result property="content" column="content"/>
+        <result property="com_time" column="com_time"/>
+        <result property="parent_com_id" column="parent_com_id"/>
+        <result property="com_kind" column="com_kind"/>
+    </resultMap>
+    
+    <select id="getByComId" resultMap="commentMap">
+        select * from comment 
+        where com_id = #{comId};
+    </select>
+    <select id="getByPostId" resultMap="commentMap">
+        select * from comment
+        where post_id = #{postId};
+    </select>
+    <select id="getByParentId" resultMap="commentMap">
+        select * from comment
+        where parent_com_id = #{parentComId};
+    </select>
+    <select id="getAll" resultMap="commentMap">
+        select * from comment;
+    </select>
+    <insert id="add">
+        insert into comment(com_id, from_user_id, from_user_id, post_id, content, com_time, parent_com_id, com_kind)
+        values (#{com_id}, #{from_user_id}, #{from_user_id}, #{post_id}, #{content}, #{com_time}, #{parent_com_id}, #{com_kind});
+    </insert>
+    <delete id="deleteByPostId">
+        delete from comment
+        where post_id = #{postId}
+    </delete>
+    <update id="updateComKindByComId">
+        update comment set
+        com_kind = #{com_kind}
+        where com_id = #{com_id}
+    </update>
+</mapper> 
