@@ -27,10 +27,6 @@
     <select id="getAll" resultMap="commentMap">
         select * from comment;
     </select>
-    <insert id="add">
-        insert into comment(com_id, from_user_id, from_user_id, post_id, content, com_time, parent_com_id, com_kind)
-        values (#{com_id}, #{from_user_id}, #{from_user_id}, #{post_id}, #{content}, #{com_time}, #{parent_com_id}, #{com_kind});
-    </insert>
     <delete id="deleteByPostId">
         delete from comment
         where post_id = #{postId}

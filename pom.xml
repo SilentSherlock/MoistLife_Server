@@ -42,10 +42,17 @@
 		</dependency>
 
 		<!--mybatis-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.4</version>
+		</dependency>-->
+
+		<!--mybatis-plus-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>3.4.2</version>
 		</dependency>
 
 		<dependency>
@@ -64,7 +71,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>8.0.18</scope>
+			<version>8.0.18</version>
 		</dependency>
 		<!--移除内置tomcat-->
 		<!--<dependency>

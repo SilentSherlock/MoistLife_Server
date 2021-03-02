@@ -29,6 +29,13 @@
         select * from information
         where user_id = #{userId};
     </select>
+    <select id="getByIds" resultMap="infoMap">
+        select * from information
+        where info_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
 
     <insert id="add">
         insert into information(info_id, info_title, price, kind, area, detail, info_pictures, user_id, info_time)
