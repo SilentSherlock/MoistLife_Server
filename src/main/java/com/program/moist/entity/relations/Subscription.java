@@ -10,6 +10,6 @@ import lombok.Data;
 @Data
 public class Subscription {
 
-    private int from_user_id;
-    private int to_user_id;
+    private Integer from_user_id;
+    private Integer to_user_id;
 }

@@ -3,4 +3,12 @@
 <mapper namespace="com.program.moist.dao.infoEntities.PostDao">
     <resultMap id="postMapper" type="com.program.moist.entity.infoEntities.Post" autoMapping="true">
     </resultMap>
+
+    <select id="getByIds" resultMap="postMapper">
+        select * from post
+        where user_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
 </mapper> 

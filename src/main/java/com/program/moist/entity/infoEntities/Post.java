@@ -17,9 +17,9 @@ import java.util.Date;
 public class Post {
 
     @TableId(type = IdType.AUTO)
-    private int post_id;
+    private Integer post_id;
     private String post_title;
-    private int user_id;
+    private Integer user_id;
     private String detail;
     private Date post_time;
     private String post_pictures;

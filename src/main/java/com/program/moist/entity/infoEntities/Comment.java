@@ -12,12 +12,12 @@ import java.util.Date;
 @Data
 public class Comment {
 
-    private int com_id;
-    private int from_user_id;
-    private int to_user_id;
-    private int post_id;
+    private Integer com_id;
+    private Integer from_user_id;
+    private Integer to_user_id;
+    private Integer post_id;
     private String content;
     private Date com_time;
-    private int parent_com_id;
-    private int com_kind;//default 0, deleted 1
+    private Integer parent_com_id;
+    private Integer com_kind;//default 0, deleted 1
 }

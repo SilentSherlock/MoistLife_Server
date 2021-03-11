@@ -10,6 +10,6 @@ import lombok.Data;
 @Data
 public class ThumbUpPost {
 
-    private int post_id;
-    private int user_id;
+    private Integer post_id;
+    private Integer user_id;
 }

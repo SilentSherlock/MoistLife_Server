@@ -12,13 +12,13 @@ import java.util.Date;
 @Data
 public class Information {
 
-    private int info_id;
+    private Integer info_id;
     private String info_title;
-    private float price;
+    private Float price;
     private String kind;
     private String area;
     private String detail;
     private String info_pictures;
-    private int user_id;
+    private Integer user_id;
     private Date info_time;
 }

@@ -3,4 +3,8 @@
 <mapper namespace="com.program.moist.dao.person.AdminDao">
     <resultMap id="adminMap" type="com.program.moist.entity.person.Admin" autoMapping="true">
     </resultMap>
+
+    <select id="getAllUser" resultMap="adminMap">
+        select * from admin;
+    </select>
 </mapper> 

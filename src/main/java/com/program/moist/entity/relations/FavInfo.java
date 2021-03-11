@@ -10,6 +10,6 @@ import lombok.Data;
 @Data
 public class FavInfo {
 
-    private int info_id;
-    private int user_id;
+    private Integer info_id;
+    private Integer user_id;
 }
