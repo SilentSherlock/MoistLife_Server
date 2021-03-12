@@ -34,7 +34,7 @@ public class PersonService {
 
     /**
      * @Description add admin
-     * @param admin
+     * @param admin the system admin
      */
     public void addAdmin(Admin admin) {
         String name = "addAdmin-";
@@ -71,7 +71,7 @@ public class PersonService {
      *
      * @param adminName
      * @param password
-     * @return
+     * @return Admin
      */
     public Admin adminValidate(String adminName, String password) {
         String name = "adminValidate-";

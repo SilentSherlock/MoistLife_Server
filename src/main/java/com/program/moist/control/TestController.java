@@ -1,4 +1,4 @@
-package com.program.moist.controller;
+package com.program.moist.control;
 
 import com.program.moist.dao.infoEntities.CommentDao;
 import com.program.moist.entity.infoEntities.Comment;

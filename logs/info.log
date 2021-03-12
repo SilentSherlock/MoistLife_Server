@@ -24,7 +24,7 @@ org.apache.ibatis.binding.BindingException: Invalid bound statement (not found):
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:98)
 	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
 	at com.sun.proxy.$Proxy69.getAll(Unknown Source)
-	at com.program.moist.controller.TestController.testComment(TestController.java:27)
+	at com.program.moist.control.TestController.testComment(TestController.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
