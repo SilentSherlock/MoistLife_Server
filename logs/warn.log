@@ -1,61 +1,21 @@
-2021-03-01 19:52:20,918 [http-nio-0.0.0.0-8080-exec-6] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.program.moist.dao.infoEntities.CommentDao.getAll] with root cause 
-org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.program.moist.dao.infoEntities.CommentDao.getAll
-	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:51)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:111)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
-	at com.baomidou.mybatisplus.core.toolkit.CollectionUtils.computeIfAbsent(CollectionUtils.java:117)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:98)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy69.getAll(Unknown Source)
-	at com.program.moist.control.TestController.testComment(TestController.java:27)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-14 11:36:50,024 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Comment". 
+2021-03-14 11:36:50,087 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
+2021-03-14 11:36:50,087 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-03-14 11:36:50,087 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update] 
+2021-03-14 11:36:50,147 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
+2021-03-14 11:36:50,168 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
+2021-03-14 11:36:50,188 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-03-14 11:36:50,208 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-03-14 11:36:50,228 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
+2021-03-14 11:36:50,254 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-03-14 11:36:50,274 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-03-14 12:35:48,527 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
+2021-03-14 12:35:48,530 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-03-14 12:35:48,535 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.update] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Update] 
+2021-03-14 12:35:48,590 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
+2021-03-14 12:35:48,614 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
+2021-03-14 12:35:48,638 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-03-14 12:35:48,661 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-03-14 12:35:48,682 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
+2021-03-14 12:35:48,703 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-03-14 12:35:48,724 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 

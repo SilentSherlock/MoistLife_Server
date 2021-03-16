@@ -1,5 +1,7 @@
 package com.program.moist.entity.infoEntities;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.util.Date;
@@ -12,6 +14,7 @@ import java.util.Date;
 @Data
 public class Comment {
 
+    @TableId(type = IdType.AUTO)
     private Integer com_id;
     private Integer from_user_id;
     private Integer to_user_id;

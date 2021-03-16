@@ -17,21 +17,21 @@ public class Result {
     private String description;
     private Map<String, Object> resultMap;
 
-    Result(Status status, String msg, Map<String, Object> map) {
+    public Result(Status status, String msg, Map<String, Object> map) {
         this.status = status;
         this.description = msg;
         this.resultMap = map;
     }
 
-    Result() {
+    public Result() {
         this(Status.DEFAULT, "", new HashMap<>());
     }
 
-    Result(Status status) {
+    public Result(Status status) {
         this(status, "", new HashMap<>());
     }
 
-    Result(Status status, String msg) {
+    public Result(Status status, String msg) {
         this(status, msg, new HashMap<>());
     }
 }
