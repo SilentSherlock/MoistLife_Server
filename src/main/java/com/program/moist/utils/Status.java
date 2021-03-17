@@ -9,5 +9,6 @@ public enum Status {
     SUCCESS,
     NOT_FOUND,
     WRONG_REQUEST,
-    DEFAULT
+    DEFAULT,
+    NEED_LOGIN
 }

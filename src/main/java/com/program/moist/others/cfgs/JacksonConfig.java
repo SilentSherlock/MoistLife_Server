@@ -1,4 +1,4 @@
-package com.program.moist.configs;
+package com.program.moist.others.cfgs;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

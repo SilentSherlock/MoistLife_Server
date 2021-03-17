@@ -1,4 +1,4 @@
-package com.program.moist.configs.interceptors;
+package com.program.moist.others.interceptors;
 
 /**
  * Date: 2021/3/12

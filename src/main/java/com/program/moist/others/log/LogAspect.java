@@ -1,4 +1,4 @@
-package com.program.moist.configs.interceptors;
+package com.program.moist.others.log;
 
 import com.program.moist.utils.Result;
 import lombok.extern.slf4j.Slf4j;
