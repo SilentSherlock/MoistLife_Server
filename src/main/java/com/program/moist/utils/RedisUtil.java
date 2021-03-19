@@ -2,8 +2,11 @@ package com.program.moist.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,11 +17,23 @@ import java.util.concurrent.TimeUnit;
  * Description: operate redis
  */
 @Slf4j
+@Component
 public class RedisUtil {
 
-    private static RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+    /**
+     * 将springboot自动装配的bean注入静态变量中
+     * 项目启动后静态变量才会被赋值
+     */
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
+    private static RedisUtil redisUtil;
     private static final String TAG = "RedisUtil-";
     private static final Long Default_TIME = (long) 60*60*24*7;
+
+    @PostConstruct
+    private void init() {
+        redisUtil = this;
+    }
 
     //region key operations
     /**
@@ -36,7 +51,7 @@ public class RedisUtil {
             return false;
         }
         try {
-            redisTemplate.expire(key, time, timeUnit);
+            redisUtil.redisTemplate.expire(key, time, timeUnit);
             return true;
         } catch (NullPointerException e) {
             log.error("RedisUtil-expire-空指针异常");
@@ -61,7 +76,7 @@ public class RedisUtil {
 
         Long time;
         try {
-            time = redisTemplate.getExpire(key, timeUnit);
+            time = redisUtil.redisTemplate.getExpire(key, timeUnit);
         } catch (NullPointerException e) {
             log.error(TAG + "getExpire-空指针异常");
             return null;
@@ -82,7 +97,7 @@ public class RedisUtil {
         }
 
         try {
-            return redisTemplate.hasKey(key);
+            return redisUtil.redisTemplate.hasKey(key);
         } catch (NullPointerException e) {
             log.error(TAG + "hasKey-空指针异常");
             return false;
@@ -103,10 +118,10 @@ public class RedisUtil {
 
         try {
             if (key.length == 1) {
-                Boolean res = redisTemplate.delete(key[0]);
+                Boolean res = redisUtil.redisTemplate.delete(key[0]);
                 return res != null && res ? (long) 1 : (long) 0;
             }else {
-                return redisTemplate.delete((Collection<String>) CollectionUtils.arrayToList(key));
+                return redisUtil.redisTemplate.delete((Collection<String>) CollectionUtils.arrayToList(key));
             }
         } catch (Exception e) {
             log.error(TAG + "delete got exception");
@@ -122,14 +137,14 @@ public class RedisUtil {
      * @param key
      * @return
      */
-    public static Object getCommon(String key) {
+    public static String getCommon(String key) {
         if (key == null || "".equals(key)) {
             log.warn(TAG + "getCommon-key is null or empty");
             return null;
         }
 
         try {
-            return redisTemplate.opsForValue().get(key);
+            return (String) redisUtil.redisTemplate.opsForValue().get(key);
         } catch (Exception e) {
             log.error(TAG + "getCommon got exception");
             return null;
@@ -141,18 +156,18 @@ public class RedisUtil {
      * @param key
      * @param value
      */
-    public static void setCommon(String key, Object value) {
+    public static void setCommon(String key, String value) {
         setCommon(key, value, Default_TIME, TimeUnit.SECONDS);
     }
 
-    public static void setCommon(String key, Object value, Long time, TimeUnit unit) {
+    public static void setCommon(String key, String value, Long time, TimeUnit unit) {
         if (key == null || value == null || "".equals(key)) {
             log.warn(TAG + "setCommon-params not assigned");
             return;
         }
 
         try {
-            redisTemplate.opsForValue().set(key, value, time, unit);
+            redisUtil.redisTemplate.opsForValue().set(key, value, time, unit);
         } catch (Exception e) {
             log.error(TAG + "setCommon got exception");
         }
@@ -167,7 +182,7 @@ public class RedisUtil {
      * @param key
      * @return
      */
-    public List<Object> getListAll(String key) {
+    public static List<Object> getListAll(String key) {
         return getListRange(key, (long) 0, getListSize(key));
     }
 
@@ -178,14 +193,14 @@ public class RedisUtil {
      * @param to excluded
      * @return
      */
-    public List<Object> getListRange(String key, Long from, Long to) {
+    public static List<Object> getListRange(String key, Long from, Long to) {
         if (key == null || "".equals(key) || to <= from) {
             log.warn(TAG + "getListRange-wrong params");
             return null;
         }
 
         try {
-            return redisTemplate.opsForList().range(key, from, to);
+            return redisUtil.redisTemplate.opsForList().range(key, from, to);
         } catch (Exception e) {
             log.error(TAG + "getListRange got exception");
             return null;
@@ -197,14 +212,14 @@ public class RedisUtil {
      * @param key
      * @return
      */
-    public Long getListSize(String key) {
+    public static Long getListSize(String key) {
         if (key == null || "".equals(key)) {
             log.warn(TAG + "getListSize-null params or empty");
             return null;
         }
 
         try {
-            return redisTemplate.opsForList().size(key);
+            return redisUtil.redisTemplate.opsForList().size(key);
         } catch (Exception e) {
             log.error(TAG + "getListSize got exception");
             return null;
@@ -217,14 +232,14 @@ public class RedisUtil {
      * @param index
      * @return
      */
-    public Object indexOf(String key, Long index) {
+    public static Object indexOf(String key, Long index) {
         if (key == null || "".equals(key) || index < 0) {
             log.warn(TAG + "indexOf-wrong params");
             return null;
         }
 
         try {
-            return redisTemplate.opsForList().indexOf(key, index);
+            return redisUtil.redisTemplate.opsForList().indexOf(key, index);
         } catch (Exception e) {
             log.error(TAG + "indexOf got exception");
             return null;
@@ -236,18 +251,18 @@ public class RedisUtil {
      * @param key
      * @param values
      */
-    public void setList(String key, List<Object> values) {
+    public static void setList(String key, List<Object> values) {
         setList(key, values, Default_TIME, TimeUnit.SECONDS);
     }
 
-    public void setList(String key, List<Object> values, Long time, TimeUnit unit) {
+    public static void setList(String key, List<Object> values, Long time, TimeUnit unit) {
         if (key == null || "".equals(key) || values == null) {
             log.warn(TAG + "setList-params wrong");
             return;
         }
 
         try {
-            redisTemplate.opsForList().rightPushAll(key, values);
+            redisUtil.redisTemplate.opsForList().rightPushAll(key, values);
             expire(key, time, unit);
         } catch (Exception e) {
             log.error(TAG + "setList got exception");
@@ -261,4 +276,5 @@ public class RedisUtil {
 
     //region set ops
     //endregion
+
 }

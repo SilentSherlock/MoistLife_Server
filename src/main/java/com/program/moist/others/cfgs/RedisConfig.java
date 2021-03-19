@@ -54,8 +54,9 @@ public class RedisConfig extends CachingConfigurerSupport {
      */
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Bean
-    public RedisTemplate<String, String> redisTemplate(JedisConnectionFactory factory) {
-        StringRedisTemplate template = new StringRedisTemplate(factory);
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate template = new RedisTemplate();
+        template.setConnectionFactory(factory);
 
         //序列化和反序列化key和value的值
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);

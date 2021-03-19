@@ -6,5 +6,5 @@ package com.program.moist.control;
  * Description: accept user's or admin's request, deal with the request,
  * operate the DB or return data with JSON type
  */
-public class PersonController {
+public class UserController {
 }

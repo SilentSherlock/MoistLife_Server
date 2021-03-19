@@ -17,9 +17,7 @@ public interface InformationDao extends BaseMapper<Information> {
     List<Information> getByKind(String kind);
     List<Information> getByArea(String area);
     List<Information> getByUserId(Integer userId);
-    int add(Information information);
     int delete(Integer infoId);//for admin
     int deleteByUserId(@Param("info_id") Integer infoId, @Param("user_id") Integer userId);//for user
-    int update(Information information);
     List<Information> getByIds(List<Integer> ids);
 }

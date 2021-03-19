@@ -2,8 +2,8 @@ package com.program.moist.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
  * Author: SilentSherlock
  * Description: parse Object to Json String and Json String to Object
  */
+@Slf4j
 public class JsonUtil {
 
     private static ObjectMapper mapper = new ObjectMapper();
@@ -31,15 +32,63 @@ public class JsonUtil {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略JSON字符串中有bean没有的属性的错误
     }
 
-    public static String obj2String(Object object) throws JsonProcessingException {
+    /**
+     * 对象转换为JSON字符串
+     * @param object 可以是单个对象也可以是Collection
+     * @return
+     */
+    public static String obj2String(Object object) {
         if (null == object) return null;
 
-        return object instanceof String ? (String) object : mapper.writeValueAsString(object);
+        try {
+            return object instanceof String ? (String) object : mapper.writeValueAsString(object);
+        }catch (Exception e) {
+            log.error("JsonUtil parse obj as string wrong", e);
+            return null;
+        }
     }
 
-    public static <T> T string2Obj(String str, Class<T> type) throws JsonProcessingException {
+    /**
+     * 根据给出的对象类型将JSON字符串转换为单个对象
+     * @param str
+     * @param type
+     * @param <T>
+     * @return
+     */
+    public static <T> T string2Obj(String str, Class<T> type) {
         if (str == null || "".equals(str) || type == null) return null;
 
-        return String.class.equals(type) ? (T) str : mapper.readValue(str, type);
+        try {
+            return String.class.equals(type) ? (T) str : mapper.readValue(str, type);
+        } catch (Exception e) {
+            log.error("JsonUtil parse string as object wrong");
+            return null;
+        }
     }
+
+    /**
+     * 将JSON字符串转换为集合类的对象
+     * example string2Obj(str, List.class, Set<Integer>.class, Integer.class)
+     * @param str
+     * @param collectionClass 集合类型
+     * @param elementClass 子元素类型，可嵌套
+     * @param <T>
+     * @return
+     */
+    public static <T> T string2Obj(String str, Class<?> collectionClass, Class<?>... elementClass) {
+        if (str == null || "".equals(str) || collectionClass == null || elementClass.length == 0) {
+            log.warn("JsonUtil string2Obj wrong params");
+            return null;
+        }
+
+        try {
+            return mapper.readValue(str,
+                    mapper.getTypeFactory().constructParametricType(collectionClass, elementClass));
+        } catch (Exception e) {
+            log.error("JsonUtil parse string as object wrong", e);
+            return null;
+        }
+    }
+
+
 }

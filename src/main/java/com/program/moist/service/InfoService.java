@@ -1,8 +1,10 @@
 package com.program.moist.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.program.moist.dao.infoEntities.CategoryDao;
 import com.program.moist.dao.infoEntities.InformationDao;
 import com.program.moist.dao.relations.FavInfoDao;
+import com.program.moist.entity.infoEntities.Category;
 import com.program.moist.entity.infoEntities.Information;
 import com.program.moist.entity.relations.FavInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +30,8 @@ public class InfoService {
     private InformationDao informationDao;
     @Resource
     private FavInfoDao favInfoDao;
+    @Resource
+    private CategoryDao categoryDao;
 
     private static final String TAG = "InfoService-";
     //endregion
@@ -39,7 +43,7 @@ public class InfoService {
     public void addInfo(Information information) {
         String name = "addInfo-";
         log.info(TAG + name);
-        int res =  informationDao.add(information);
+        int res =  informationDao.insert(information);
         if (res == 0) log.info(TAG + name + "failed");
         else log.info(TAG + name + res + " insert");
     }
@@ -126,6 +130,60 @@ public class InfoService {
         }
 
         return informationDao.getByIds(ids);
+    }
+    //endregion
+
+    //region category crud
+
+    /**
+     *
+     * @param category
+     */
+    public void addCategory(Category category) {
+        int result = categoryDao.insert(category);
+        if (result == 0) {
+            log.warn(TAG + "add category failed");
+        }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Category> getAllCategory() {
+        try {
+            return categoryDao.getAll();
+        } catch (Exception e) {
+            log.error(TAG + "get all category failed", e);
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    public List<Category> getCateByMap(Map<String, Object> params) {
+        try {
+            return categoryDao.selectByMap(params);
+        } catch (Exception e) {
+            log.error(TAG + "get Category by map wrong", e);
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param category
+     */
+    public void updateCategory(Category category) {
+        try {
+            int result = categoryDao.updateById(category);
+            if (result == 0) log.warn(TAG + "update category, no rows effected");
+        } catch (Exception e) {
+            log.error(TAG + "update category failed", e);
+        }
     }
     //endregion
 }

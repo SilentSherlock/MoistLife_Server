@@ -15,10 +15,11 @@ public class Information {
     private Integer info_id;
     private String info_title;
     private Float price;
-    private String kind;
+    private Integer cate_id;
     private String area;
     private String detail;
     private String info_pictures;
     private Integer user_id;
     private Date info_time;
+    private Date update_time;
 }
