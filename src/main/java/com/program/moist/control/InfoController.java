@@ -158,7 +158,7 @@ public class InfoController {
     public Result addInfo(Information information) {
         Result result = new Result();
         System.out.println(information.toString());
-        infoService.addInfo(information);
+        //infoService.addInfo(information);
         result.setStatus(Status.SUCCESS);
         return result;
     }
