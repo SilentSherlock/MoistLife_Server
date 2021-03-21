@@ -4,9 +4,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.program.moist.entity.infoEntities.Category;
 import com.program.moist.entity.infoEntities.Information;
 import com.program.moist.entity.person.Admin;
+import com.program.moist.entity.person.User;
+import com.program.moist.entity.relations.FavInfo;
 import com.program.moist.service.InfoService;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,7 +37,6 @@ public class InfoController {
     private InfoService infoService;
 
     @RequestMapping("/browse/getDefaultInfo")
-    @ResponseBody
     public Result getDefaultInfo() {
         Result result = new Result();
         result.setStatus(Status.SUCCESS);
@@ -54,7 +56,6 @@ public class InfoController {
     }
 
     @RequestMapping("/browse/getAllCate")
-    @ResponseBody
     public Result getAllCate() {
         Result result = new Result();
         result.setStatus(Status.SUCCESS);
@@ -72,12 +73,26 @@ public class InfoController {
     }
 
     @RequestMapping("/browse/getInfoByCate")
-    @ResponseBody
     public Result getInfoByKind(HttpServletRequest request) {
         Result result = new Result();
-        result.setStatus(Status.SUCCESS);
 
-        Integer cate_id = Integer.parseInt(request.getParameter("cate_id"));
+        String value = request.getParameter("cate_id");
+        if (value == null || "".equals(value)) {
+            result.setStatus(Status.WRONG_REQUEST);
+            result.setDescription("need parameter cate_id");
+            return result;
+        }
+
+        Integer cate_id = null;
+        try {
+            cate_id = Integer.parseInt(value);
+        } catch (Exception e) {
+            log.error("value is not num string", e);
+            result.setStatus(Status.WRONG_REQUEST);
+            result.setDescription("value is not num string");
+            return result;
+        }
+
         List<Information> list;
         String key = TokenUtil.CATEGORY + cate_id;
         if (RedisUtil.hasKey(key)) {
@@ -94,5 +109,84 @@ public class InfoController {
         return result;
     }
 
+    @RequestMapping("/browse/getInfoByArea")
+    public Result getInfoByArea(HttpServletRequest request) {
+        Result result = new Result();
+
+        String hashKey = request.getParameter("area");
+        if (hashKey == null || "".equals(hashKey)) {
+            result.setStatus(Status.WRONG_REQUEST);
+            result.setDescription("need parameter area");
+            return result;
+        }
+
+        List<Information> list;
+        if (RedisUtil.hasKey(TokenUtil.AREA, hashKey)) {
+            list = JsonUtil.string2Obj((String) RedisUtil.getMapValue(TokenUtil.AREA, hashKey), List.class, Information.class);
+        } else {
+            Map<String, Object> params = new HashMap<>();
+            params.put("area", hashKey);
+            list = infoService.getInfoByMap(params);
+            RedisUtil.putMapValue(TokenUtil.AREA, hashKey, JsonUtil.obj2String(list));
+        }
+
+        result.setStatus(Status.SUCCESS);
+        result.getResultMap().put(hashKey, list);
+        return result;
+    }
+
+    @RequestMapping("/browse/getInfoByUserId")
+    public Result getInfoByUserId(Integer userId) {
+        Result result = new Result();
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("user_id", userId);
+        List<Information> list = infoService.getInfoByMap(params);
+        if (list == null) {
+            result.setStatus(Status.WRONG_REQUEST);
+            result.setDescription("userId maybe wrong");
+        } else {
+            result.setStatus(Status.SUCCESS);
+            result.setDescription("success");
+            result.getResultMap().put("info_list", list);
+        }
+
+        return result;
+    }
+
+    @RequestMapping("/addInfo")
+    public Result addInfo(Information information) {
+        Result result = new Result();
+        System.out.println(information.toString());
+        infoService.addInfo(information);
+        result.setStatus(Status.SUCCESS);
+        return result;
+    }
+
+    @RequestMapping("/updateInfo")
+    public Result updateInfo(Information information) {
+        Result result = new Result();
+        infoService.updateInfo(information);
+        result.setStatus(Status.SUCCESS);
+        return result;
+    }
+
+    @RequestMapping("/addUserFavInfo")
+    public Result addUserFavInfo(FavInfo favInfo) {
+        Result result = new Result();
+        infoService.addFavInfo(favInfo);
+        result.setStatus(Status.SUCCESS);
+        return result;
+    }
+    @RequestMapping("/getUserFavInfo")
+    public Result getUserFavInfo(Integer userId) {
+        Result result = new Result();
+
+        List<Information> list = infoService.getUserFavInfo(userId);
+        result.setStatus(Status.SUCCESS);
+        result.getResultMap().put("fav_info", list);
+
+        return result;
+    }
 
 }

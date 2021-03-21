@@ -16,6 +16,6 @@ public class TokenUtil {
     public static final String DEFAULT_INFO = "default_info";
     public static final String CATEGORY = "category";
     public static final Long DEFAULT_TIME = (long) 60*60*24*7;
-
+    public static final String AREA = "area";
 
 }

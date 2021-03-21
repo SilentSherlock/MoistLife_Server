@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -272,6 +274,121 @@ public class RedisUtil {
     //endregion
 
     //region hash ops
+
+    /**
+     * 获得hash表中所有的键
+     * @param key
+     * @return
+     */
+    public static Set<Object> getMapKeys(String key) {
+        if (key == null || "".equals(key)) {
+            log.warn(TAG + "getMapKeys-key is null or empty");
+            return null;
+        }
+
+        try {
+            return redisUtil.redisTemplate.opsForHash().keys(key);
+        } catch (Exception e) {
+            log.error(TAG + "getMapKeys got exception");
+            return null;
+        }
+    }
+
+    /**
+     * 获得hash表中所有键值对
+     * @param key
+     * @return
+     */
+    public static Map<Object, Object> getMapAll(String key) {
+        if (key == null || "".equals(key)) {
+            log.warn(TAG + "getMapAll-key is null or empty");
+            return null;
+        }
+
+        try {
+            return redisUtil.redisTemplate.opsForHash().entries(key);
+        } catch (Exception e) {
+            log.error(TAG + "getMapAll got exception");
+            return null;
+        }
+    }
+
+    /**
+     * 根据键获取表中对象
+     * @param key
+     * @param hashKey 确定为String类型
+     * @return
+     */
+    public static Object getMapValue(String key, String hashKey) {
+        if (key == null || hashKey == null || "".equals(key) || "".equals(hashKey)) {
+            log.warn(TAG + "getMapValue-wrong parameter");
+            return null;
+        }
+
+        try {
+            return redisUtil.redisTemplate.opsForHash().get(key, hashKey);
+        } catch (Exception e) {
+            log.error(TAG + "getMapAll got exception");
+            return null;
+        }
+    }
+
+    /**
+     * 删除一个或多个键值对
+     * @param key
+     * @param hashKeys
+     */
+    public static void deleteMap(String key, String... hashKeys) {
+        if (key == null || "".equals(key) || hashKeys.length == 0) {
+            log.warn(TAG + "deleteMap-keys is empty");
+            return;
+        }
+
+        try {
+            redisUtil.redisTemplate.opsForHash().delete(key, hashKeys);
+        } catch (Exception e) {
+            log.error(TAG + "deleteMap get exception");
+        }
+    }
+
+    /**
+     * 存入键值对
+     * @param key
+     * @param hashKey
+     * @param hashValue
+     */
+    public static void putMapValue(String key, String hashKey, Object hashValue) {
+        if (key == null || "".equals(key) || hashKey == null || "".equals(hashKey) || hashValue == null) {
+            log.warn(TAG + "putMapValue wrong parameters");
+            return;
+        }
+
+        try {
+            redisUtil.redisTemplate.opsForHash().put(key, hashKey, hashValue);
+        } catch (Exception e) {
+            log.error(TAG + "putMapValue get Exception");
+        }
+    }
+
+    /**
+     * 判断键值对是否存在
+     * @param key
+     * @param hashKey
+     * @return
+     */
+    public static Boolean hasKey(String key, String hashKey) {
+        if (key == null || hashKey == null || "".equals(key) || "".equals(hashKey)) {
+            log.warn(TAG + "hasKey-hash parameter empty");
+            return false;
+        }
+
+        try {
+            return redisUtil.redisTemplate.opsForHash().hasKey(key, hashKey);
+        } catch (NullPointerException e) {
+            log.error(TAG + "hasKey-hash got exception");
+            return false;
+        }
+    }
     //endregion
 
     //region set ops
