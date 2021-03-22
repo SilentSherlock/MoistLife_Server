@@ -1,19 +1,12 @@
 package com.program.moist.control;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.program.moist.entity.infoEntities.Category;
 import com.program.moist.entity.infoEntities.Information;
-import com.program.moist.entity.person.Admin;
-import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.FavInfo;
 import com.program.moist.service.InfoService;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.cache.CacheProperties;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -171,6 +164,17 @@ public class InfoController {
         return result;
     }
 
+    @RequestMapping("/deleteInfo")
+    public Result deleteInfo(Integer infoId) {
+        Result result = new Result();
+        Map<String, Object> params = new HashMap<>();
+        params.put("info_id", infoId);
+        infoService.deleteInfoByMap(params);
+
+        result.setStatus(Status.SUCCESS);
+        return result;
+    }
+
     @RequestMapping("/addUserFavInfo")
     public Result addUserFavInfo(FavInfo favInfo) {
         Result result = new Result();
@@ -178,6 +182,7 @@ public class InfoController {
         result.setStatus(Status.SUCCESS);
         return result;
     }
+
     @RequestMapping("/getUserFavInfo")
     public Result getUserFavInfo(Integer userId) {
         Result result = new Result();
@@ -186,6 +191,15 @@ public class InfoController {
         result.setStatus(Status.SUCCESS);
         result.getResultMap().put("fav_info", list);
 
+        return result;
+    }
+
+    @RequestMapping("/deleteFavInfo")
+    public Result deleteFavInfo(FavInfo favInfo) {
+        Result result = new Result();
+
+        infoService.deleteFavInfo(favInfo.getInfo_id(), favInfo.getUser_id());
+        result.setStatus(Status.SUCCESS);
         return result;
     }
 

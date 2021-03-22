@@ -1,13 +1,12 @@
 package com.program.moist.dao.relations;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fasterxml.jackson.databind.ser.Serializers;
-import com.program.moist.entity.relations.Subscription;
+import com.program.moist.entity.relations.Follow;
 
 /**
  * Date: 2021/3/1
  * Author: SilentSherlock
  * Description: describe the class features
  */
-public interface SubscriptionDao extends BaseMapper<Subscription> {
+public interface FollowDao extends BaseMapper<Follow> {
 }

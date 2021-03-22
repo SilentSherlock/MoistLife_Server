@@ -3,18 +3,18 @@ package com.program.moist.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.program.moist.dao.infoEntities.CategoryDao;
 import com.program.moist.dao.infoEntities.InformationDao;
+import com.program.moist.dao.relations.CategorySubDao;
 import com.program.moist.dao.relations.FavInfoDao;
 import com.program.moist.entity.infoEntities.Category;
 import com.program.moist.entity.infoEntities.Information;
+import com.program.moist.entity.relations.CategorySub;
 import com.program.moist.entity.relations.FavInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import javax.swing.text.html.parser.Entity;
+import java.util.*;
 
 /**
  * Date: 2021/3/2
@@ -31,9 +31,39 @@ public class InfoService {
     @Resource
     private FavInfoDao favInfoDao;
     @Resource
+    private CategorySubDao categorySubDao;
+    @Resource
     private CategoryDao categoryDao;
 
     private static final String TAG = "InfoService-";
+    //endregion
+
+    //region categorySub crud
+
+    /**
+     *
+     * @param categorySub
+     */
+    public void addCategorySub(CategorySub categorySub) {
+        String name = "addCategorySub-";
+        log.info(TAG + name);
+        int res = categorySubDao.insert(categorySub);
+        if (res == 0) log.info(TAG + name + " failed");
+        else log.info(TAG + name + res + " inserted");
+    }
+
+    /**
+     *
+     * @param params
+     */
+    public void deleteCategorySubByMap(Map<String, Object> params) {
+        String name = "deleteCategorySub-";
+        log.info(TAG + name);
+        int res = categorySubDao.deleteByMap(params);
+        if (res == 0) log.info(TAG + name + " failed");
+        else log.info(TAG + name + res + " deleted");
+    }
+
     //endregion
 
     //region info crud
@@ -130,6 +160,35 @@ public class InfoService {
         }
 
         return informationDao.getByIds(ids);
+    }
+
+    /**
+     * 获得订阅数前k的category
+     * @param k 默认取前十,category少于10取全部
+     * @return
+     */
+    public List<Category> getTopKCategory(Integer k) {
+        if (k == null) k = 10;
+        List<CategorySub> list = categorySubDao.getAll();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (CategorySub categorySub : list) {
+            Integer count = map.getOrDefault(categorySub.getCate_id(), 1);
+            map.put(categorySub.getCate_id(), ++count);
+        }
+
+        Set<Map.Entry<Integer, Integer>> sets = map.entrySet();
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(sets.size(), Comparator.comparingInt(Map.Entry::getValue));
+        queue.addAll(sets);
+
+        List<Category> result = new LinkedList<>();
+        k = Math.min(queue.size(), k);
+        for (int i = 0; i < k; i++) {
+            Map<String, Object> params = new HashMap<>();
+            params.put("cate_id", Objects.requireNonNull(queue.poll()).getKey());
+            result.addAll(categoryDao.selectByMap(params));
+        }
+
+        return result;
     }
     //endregion
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.program.moist.dao.relations.ThumbUpCommentDao">
-    <resultMap id="FavInfoMap" type="com.program.moist.entity.relations.ThumbUpComment" autoMapping="true">
+    <resultMap id="ThumbUpCommentMap" type="com.program.moist.entity.relations.ThumbUpComment" autoMapping="true">
     </resultMap>
 </mapper> 

@@ -1,197 +1,22 @@
-2021-03-21 13:09:38,710 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 13:09:38,856 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 13:09:39,146 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 2972 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 13:09:39,148 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 13:09:40,335 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 13:09:40,337 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 13:09:40,337 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 13:09:40,401 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 13:09:40,662 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 13:09:40,760 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 13:09:40,763 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 13:09:40,817 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 13:09:40,846 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 13:09:40,887 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 13:09:40,911 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 13:09:40,940 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 13:09:40,966 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 13:09:40,992 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 13:09:42,341 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 13:09:42,374 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.509 seconds (JVM running for 4.592) 
-2021-03-21 13:09:42,377 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 13:10:06,086 [http-nio-0.0.0.0-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-21 13:10:06,105 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:10:06,107 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..) 
-2021-03-21 13:10:06,107 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:10:06,114 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:10:06,117 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:10:06,117 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..) 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:10:48,083 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 13:12:35,416 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:12:35,416 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..) 
-2021-03-21 13:12:35,417 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:12:35,417 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:12:35,417 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:12:35,417 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..) 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:12:51,823 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 13:12:58,842 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 13:12:58,966 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 13:12:59,307 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 12804 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 13:12:59,310 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 13:13:00,324 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 13:13:00,324 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 13:13:00,324 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 13:13:00,382 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 13:13:00,590 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 13:13:00,679 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 13:13:00,682 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 13:13:00,726 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 13:13:00,748 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 13:13:00,770 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 13:13:00,789 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 13:13:00,811 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 13:13:00,829 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 13:13:00,847 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 13:13:01,772 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 13:13:01,795 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.819 seconds (JVM running for 3.819) 
-2021-03-21 13:13:01,797 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 13:14:59,775 [http-nio-0.0.0.0-8080-exec-4] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-21 13:14:59,792 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:14:59,793 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..) 
-2021-03-21 13:14:59,793 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:14:59,798 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:14:59,801 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:14:59,801 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..)3- 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info//browse/getInfoByUserId 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 13:18:53,386 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByUserId(..)3- 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getInfoByUserId 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-DEFAULT-Msg-} 
-2021-03-21 16:14:54,645 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 16:20:31,770 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:20:31,857 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:20:32,121 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 12388 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 16:20:32,123 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 16:20:33,059 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:20:33,059 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 16:20:33,059 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 16:20:33,106 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 16:20:33,274 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 16:20:33,367 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 16:20:33,370 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 16:20:33,417 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 16:20:33,440 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 16:20:33,468 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 16:20:33,490 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 16:20:33,513 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 16:20:33,533 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 16:20:33,553 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 16:20:34,440 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:20:34,456 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.597 seconds (JVM running for 3.382) 
-2021-03-21 16:20:34,456 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 16:20:37,107 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-21 16:25:25,211 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:25:25,305 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:25:25,555 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 2312 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 16:25:25,555 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 16:25:26,490 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:25:26,490 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 16:25:26,490 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 16:25:26,552 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 16:25:26,709 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 16:25:26,787 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 16:25:26,787 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 16:25:26,834 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 16:25:26,849 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 16:25:26,865 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 16:25:26,896 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 16:25:26,912 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 16:25:26,928 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 16:25:26,943 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 16:25:27,794 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:25:27,810 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.505 seconds (JVM running for 3.303) 
-2021-03-21 16:25:27,810 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 16:25:41,074 [http-nio-0.0.0.0-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-21 16:25:47,229 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 16:25:47,241 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : InfoController.addInfo(..)Information(info_id=null, info_title=二手家电, price=33.2, cate_id=4, area=fdaf, detail=dafsa, info_pictures=fdaf, user_id=2323, info_time=null, update_time=null)- 
-2021-03-21 16:25:47,241 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/addInfo 
-2021-03-21 16:25:47,246 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 16:25:47,249 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-03-21 16:25:47,250 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.addInfo(..)Information(info_id=null, info_title=二手家电, price=33.2, cate_id=4, area=fdaf, detail=dafsa, info_pictures=fdaf, user_id=2323, info_time=null, update_time=Wed Sep 21 16:21:24 CST 2022)- 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/addInfo 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-03-21 16:29:55,610 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.addInfo(..)Information(info_id=null, info_title=二手家电, price=33.2, cate_id=4, area=fdaf, detail=dafsa, info_pictures=fdaf, user_id=2323, info_time=Wed Sep 21 16:21:24 CST 2022, update_time=Wed Sep 21 16:21:24 CST 2022)- 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/addInfo 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-03-21 16:30:08,966 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-21 16:31:22,383 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:31:22,482 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:31:22,797 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 5664 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 16:31:22,800 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 16:31:23,797 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:31:23,798 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 16:31:23,798 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 16:31:23,849 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 16:31:24,028 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 16:31:24,108 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 16:31:24,108 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 16:31:24,162 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 16:31:24,183 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 16:31:24,205 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 16:31:24,224 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 16:31:24,243 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 16:31:24,261 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 16:31:24,278 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 16:31:25,160 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:31:25,181 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.69 seconds (JVM running for 3.503) 
-2021-03-21 16:31:25,183 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 16:31:33,231 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:31:33,341 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-21 16:31:33,629 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 17336 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-21 16:31:33,632 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-21 16:31:34,575 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:31:34,575 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-21 16:31:34,576 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-21 16:31:34,651 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-21 16:31:34,881 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-21 16:31:34,962 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-21 16:31:34,965 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-21 16:31:35,017 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-21 16:31:35,040 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-21 16:31:35,061 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-21 16:31:35,082 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-21 16:31:35,104 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Subscription". 
-2021-03-21 16:31:35,124 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-21 16:31:35,140 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-21 16:31:36,003 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-21 16:31:36,024 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.676 seconds (JVM running for 3.513) 
-2021-03-21 16:31:36,026 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-21 16:31:39,972 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-21 16:31:40,011 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-21 16:31:40,021 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.addInfo(..)Information(info_id=null, info_title=二手家电, price=33.2, cate_id=4, area=fdaf, detail=dafsa, info_pictures=fdaf, user_id=2323, info_time=Wed Sep 21 16:21:24 CST 2022, update_time=Wed Sep 21 16:21:24 CST 2022)- 
-2021-03-21 16:31:40,022 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/addInfo 
-2021-03-21 16:31:40,028 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-03-21 16:31:40,031 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-03-21 16:31:40,032 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-03-22 17:57:48,865 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-03-22 17:57:48,986 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-03-22 17:57:49,308 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 12304 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-03-22 17:57:49,310 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-03-22 17:57:50,659 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-03-22 17:57:50,659 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-03-22 17:57:50,660 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-03-22 17:57:50,718 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-03-22 17:57:50,997 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
+2021-03-22 17:57:51,088 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
+2021-03-22 17:57:51,091 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-03-22 17:57:51,150 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Topic". 
+2021-03-22 17:57:51,174 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
+2021-03-22 17:57:51,194 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
+2021-03-22 17:57:51,217 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-03-22 17:57:51,238 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-03-22 17:57:51,256 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-03-22 17:57:51,276 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-03-22 17:57:51,296 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-03-22 17:57:52,342 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-03-22 17:57:52,369 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.375 seconds (JVM running for 5.126) 
+2021-03-22 17:57:52,371 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 

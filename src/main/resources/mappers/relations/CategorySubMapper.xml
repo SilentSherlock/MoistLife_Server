@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.program.moist.dao.relations.CategorySubDao">
+    <resultMap id="categorySubMap" type="com.program.moist.entity.relations.CategorySub" autoMapping="true">
+    </resultMap>
+
+    <select id="getAll" resultMap="categorySubMap">
+        select * from categorysub;
+    </select>
+</mapper> 

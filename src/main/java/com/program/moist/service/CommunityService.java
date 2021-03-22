@@ -2,6 +2,7 @@ package com.program.moist.service;
 
 import com.program.moist.dao.infoEntities.CommentDao;
 import com.program.moist.dao.infoEntities.PostDao;
+import com.program.moist.dao.infoEntities.TopicDao;
 import com.program.moist.dao.relations.FavPostDao;
 import com.program.moist.dao.relations.ThumbUpCommentDao;
 import com.program.moist.dao.relations.ThumbUpPostDao;
@@ -31,6 +32,8 @@ public class CommunityService {
     //region class params
     @Resource
     private PostDao postDao;
+    @Resource
+    private TopicDao topicDao;
     @Resource
     private CommentDao commentDao;
     @Resource

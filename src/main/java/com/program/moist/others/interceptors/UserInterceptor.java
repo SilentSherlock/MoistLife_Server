@@ -1,12 +1,10 @@
 package com.program.moist.others.interceptors;
 
-import com.program.moist.entity.person.User;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;

@@ -20,7 +20,9 @@ public class Post {
     private Integer post_id;
     private String post_title;
     private Integer user_id;
+    private Integer topic_id;
     private String detail;
+    private String location;
     private Date post_time;
     private String post_pictures;
 }
