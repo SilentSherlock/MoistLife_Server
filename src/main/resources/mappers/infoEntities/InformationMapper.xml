@@ -18,10 +18,6 @@
         select * from information
         where info_id = #{infoId};
     </select>
-    <select id="getByKind" resultMap="infoMap">
-        select * from information
-        where kind = #{kind};
-    </select>
     <select id="getByArea" resultMap="infoMap">
         select * from information
         where area = #{area};
@@ -37,7 +33,10 @@
             #{id}
         </foreach>
     </select>
-
+    <select id="getByPage" resultMap="infoMap">
+        select * from information
+        where ${name} = #{value};
+    </select>
     <delete id="delete">
         delete from information
         where info_id = #{info_id};

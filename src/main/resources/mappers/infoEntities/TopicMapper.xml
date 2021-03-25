@@ -3,4 +3,15 @@
 <mapper namespace="com.program.moist.dao.infoEntities.TopicDao">
     <resultMap id="topicMap" type="com.program.moist.entity.infoEntities.Topic" autoMapping="true">
     </resultMap>
+
+    <select id="getAll" resultMap="topicMap">
+        select * from topic;
+    </select>
+    <select id="getByIds" resultMap="topicMap">
+        select * from topic
+        where topic_id in
+        <foreach collection="ids" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
 </mapper> 

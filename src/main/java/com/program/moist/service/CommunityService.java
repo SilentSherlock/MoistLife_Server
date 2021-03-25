@@ -1,24 +1,26 @@
 package com.program.moist.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.program.moist.dao.infoEntities.CommentDao;
 import com.program.moist.dao.infoEntities.PostDao;
 import com.program.moist.dao.infoEntities.TopicDao;
 import com.program.moist.dao.relations.FavPostDao;
 import com.program.moist.dao.relations.ThumbUpCommentDao;
 import com.program.moist.dao.relations.ThumbUpPostDao;
+import com.program.moist.dao.relations.TopicSubDao;
 import com.program.moist.entity.infoEntities.Comment;
 import com.program.moist.entity.infoEntities.Post;
+import com.program.moist.entity.infoEntities.Topic;
 import com.program.moist.entity.relations.FavPost;
 import com.program.moist.entity.relations.ThumbUpComment;
 import com.program.moist.entity.relations.ThumbUpPost;
+import com.program.moist.entity.relations.TopicSub;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Date: 2021/3/2
@@ -35,6 +37,8 @@ public class CommunityService {
     @Resource
     private TopicDao topicDao;
     @Resource
+    private TopicSubDao topicSubDao;
+    @Resource
     private CommentDao commentDao;
     @Resource
     private FavPostDao favPostDao;
@@ -46,6 +50,120 @@ public class CommunityService {
     private static final String TAG = "CommunityService-";
     //endregion
 
+    //region topic crud
+
+    /**
+     *
+     * @param topic
+     */
+    public void addTopic(Topic topic) {
+        String name = "addTopic-";
+        log.info(TAG + name);
+        int result = topicDao.insert(topic);
+        if (result == 0) log.info(TAG + name + " add info failed");
+        else log.info(TAG + name + " add info success");
+    }
+
+    /**
+     *
+     * @param params
+     */
+    public void deleteTopicByMap(Map<String, Object> params) {
+        String name = "deleteTopicByMap-";
+        log.info(TAG + name);
+        int result = topicDao.deleteByMap(params);
+        if (result == 0) log.info(TAG + name + " delete failed");
+        else log.info(TAG + name + " no rows effected");
+    }
+
+    /**
+     *
+     * @param topic
+     */
+    public void updateTopic(Topic topic) {
+        String name = "updateTopic-";
+        log.info(TAG + name);
+        int result = topicDao.updateById(topic);
+        if (result == 0) log.info(TAG + name + " update failed");
+        else log.info(TAG + name + " no rows effected");
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Topic> getAllTopic() {
+        String name = "getAllTopic-";
+        log.info(TAG + name);
+        return topicDao.getAll();
+    }
+
+    /**
+     *
+     * @param ids
+     * @return
+     */
+    public List<Topic> getTopicByIds(List<Integer> ids) {
+        return topicDao.getByIds(ids);
+    }
+
+    public List<Topic> getTopicByTopicSubs(List<TopicSub> subs) {
+        List<Integer> ids = new LinkedList<>();
+        for (TopicSub sub :
+                subs) {
+            ids.add(sub.getTopic_id());
+        }
+        return getTopicByIds(ids);
+    }
+    //endregion
+    //region topicSub crud
+
+    /**
+     *
+     * @param topicSub
+     */
+    public void addTopicSub(TopicSub topicSub) {
+        String name = "addTopicSub-";
+        log.info(TAG + name);
+        int result = topicSubDao.insert(topicSub);
+        if (result == 0) log.info(TAG + name + " inserted failed");
+        else log.info(TAG + name + result + " rows inserted");
+    }
+
+    /**
+     *
+     * @param params
+     */
+    public void deleteTopicSubByMap(Map<String, Object> params) {
+        String name = "deleteTopicSubByMap-";
+        log.info(TAG + name);
+        int result = topicSubDao.deleteByMap(params);
+        if (result == 0) log.info(TAG + name + " delete failed");
+        else log.info(TAG + name + result + " rows deleted");
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<TopicSub> getAllTopicSub() {
+        String name = "getAllTopicSub-";
+        log.info(TAG + name);
+        return topicSubDao.getAll();
+    }
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    public List<TopicSub> getTopicSubByMap(Map<String, Object> params) {
+        String name = "getTopicSubByMap-";
+        log.info(TAG + name);
+        return topicSubDao.selectByMap(params);
+    }
+
+    //endregion
     //region post crud
     /**
      * add a post
@@ -75,6 +193,31 @@ public class CommunityService {
         String name = "getPostByMap-";
         log.info(TAG + name);
         return postDao.selectByMap(params);
+    }
+
+    /**
+     *
+     * @param ids
+     * @return
+     */
+    public List<Post> getPostByIds(List<Integer> ids) {
+        String name = "getPostByIds-";
+        log.info(TAG + name);
+        return postDao.getByIds(ids);
+    }
+
+    /**
+     * 根据分页获取post
+     * @param index 分页码
+     * @param size 长度
+     * @param name
+     * @param value
+     * @return
+     */
+    public List<Post> getPostByPage(Integer index, Integer size, String name, Object value) {
+        Page<Post> page = new Page<>(index, size);
+        IPage<Post> iPage = postDao.getByPage(page, name, value);
+        return iPage.getRecords();
     }
     //endregion
 
@@ -243,6 +386,33 @@ public class CommunityService {
         return postDao.getByIds(ids);
     }
 
+    /**
+     * 获取关注前k的topic
+     * @param k 默认为10
+     * @return
+     */
+    public List<Topic> getTopKTopic(Integer k) {
+        if (k == null) k = 10;
+        List<TopicSub> list = topicSubDao.getAll();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (TopicSub topicSub : list) {
+            Integer count = map.getOrDefault(topicSub.getTopic_id(), 0);
+            map.put(topicSub.getTopic_id(), ++count);
+        }
 
+        Set<Map.Entry<Integer, Integer>> set = map.entrySet();
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(set.size(), Comparator.comparingInt(Map.Entry::getValue));
+        queue.addAll(set);
+
+        List<Topic> result = new LinkedList<>();
+        k = Math.min(set.size(), k);
+        for (int i = 0; i < k; i++) {
+            Map<String, Object> params = new HashMap<>();
+            params.put("topic_id", Objects.requireNonNull(queue.poll()).getKey());
+            result.addAll(topicDao.selectByMap(params));
+        }
+
+        return result;
+    }
     //endregion
 }

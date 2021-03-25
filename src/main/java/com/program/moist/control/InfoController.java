@@ -147,11 +147,33 @@ public class InfoController {
         return result;
     }
 
+    /**
+     * 分页获取
+     * @param index 当前页面,固定10条数据
+     * @param name
+     * @param value
+     * @return
+     */
+    @RequestMapping("/getInfoByPage")
+    public Result getInfoByPage(Integer index, String name, Object value) {
+        Result result = new Result();
+        List<Information> cur = infoService.getInfoByPage(index, 10, name, value);
+
+        result.getResultMap().put("info_list", cur);
+        if (cur == null || cur.size() == 0) {
+            result.setStatus(Status.DEFAULT);
+            result.setDescription("数据为空");
+        } else {
+            result.setStatus(Status.SUCCESS);
+        }
+
+        return result;
+    }
     @RequestMapping("/addInfo")
     public Result addInfo(Information information) {
         Result result = new Result();
         System.out.println(information.toString());
-        //infoService.addInfo(information);
+        infoService.addInfo(information);
         result.setStatus(Status.SUCCESS);
         return result;
     }

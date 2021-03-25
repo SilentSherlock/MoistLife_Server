@@ -1,6 +1,8 @@
 package com.program.moist.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.program.moist.dao.infoEntities.CategoryDao;
 import com.program.moist.dao.infoEntities.InformationDao;
 import com.program.moist.dao.relations.CategorySubDao;
@@ -67,6 +69,22 @@ public class InfoService {
     //endregion
 
     //region info crud
+
+    /**
+     * 分页查询信息
+     * @param index 查询页码
+     * @param size 一页信息数量
+     * @param name 查询列名
+     * @param value 查询列值
+     * @return
+     */
+    public List<Information> getInfoByPage(Integer index, Integer size, String name, Object value) {
+        Page<Information> page = new Page<>(index, size);
+        String method = "getInfoByPage-";
+        log.info(TAG + method);
+        IPage<Information> result = informationDao.getByPage(page, name, value);
+        return result.getRecords();
+    }
     /**
      * add a information
      * */
@@ -172,7 +190,7 @@ public class InfoService {
         List<CategorySub> list = categorySubDao.getAll();
         HashMap<Integer, Integer> map = new HashMap<>();
         for (CategorySub categorySub : list) {
-            Integer count = map.getOrDefault(categorySub.getCate_id(), 1);
+            Integer count = map.getOrDefault(categorySub.getCate_id(), 0);
             map.put(categorySub.getCate_id(), ++count);
         }
 

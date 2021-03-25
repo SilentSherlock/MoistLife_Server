@@ -2,15 +2,15 @@ package com.program.moist.service;
 
 import com.program.moist.dao.person.AdminDao;
 import com.program.moist.dao.person.UserDao;
+import com.program.moist.dao.relations.FollowDao;
 import com.program.moist.entity.person.Admin;
 import com.program.moist.entity.person.User;
+import com.program.moist.entity.relations.Follow;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Date: 2021/3/2
@@ -26,8 +26,71 @@ public class PersonService {
     private AdminDao adminDao;
     @Resource
     private UserDao userDao;
+    @Resource
+    private FollowDao followDao;
 
     public static final String TAG = "PersonService-";
+    //endregion
+
+    //region follow crud
+
+    /**
+     *
+     * @param follow
+     */
+    public void addFollow(Follow follow) {
+        int result = followDao.insert(follow);
+        if (result == 0) log.info("add new follow failed");
+        else log.info("add follow success");
+    }
+
+    /**
+     *
+     * @param fromId
+     */
+    public void deleteFollow(Integer fromId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("from_user_id", fromId);
+        int result = followDao.deleteByMap(params);
+        if (result == 0) log.info("delete no effect");
+        else log.info("delete " + result + " follows");
+    }
+
+    /**
+     * 获取该用户的关注
+     * @param fromId
+     * @return
+     */
+    public List<User> getUserFollowing(Integer fromId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("from_user_id", fromId);
+        List<Follow> follows = followDao.selectByMap(params);
+
+        List<Integer> list = new LinkedList<>();
+        for (Follow follow :
+                follows) {
+            list.add(follow.getTo_user_id());
+        }
+        return userDao.getByIds(list);
+    }
+
+    /**
+     * 获取关注该用户的人
+     * @param toId
+     * @return
+     */
+    public List<User> getUserFollowed(Integer toId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("to_user_id", toId);
+        List<Follow> followers = followDao.selectByMap(params);
+
+        List<Integer> ids = new ArrayList<>();
+        for (Follow f :
+                followers) {
+            ids.add(f.getFrom_user_id());
+        }
+        return userDao.getByIds(ids);
+    }
     //endregion
 
     //region admin crud
@@ -162,5 +225,7 @@ public class PersonService {
         return result.get(0);
     }
     //endregion
+
+    //region mixed method
 
 }

@@ -3,4 +3,12 @@
 <mapper namespace="com.program.moist.dao.person.UserDao">
     <resultMap id="userMap" type="com.program.moist.entity.person.User" autoMapping="true">
     </resultMap>
+
+    <select id="getByIds" resultMap="userMap">
+        select * from user
+        where user_id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
 </mapper> 

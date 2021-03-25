@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.program.moist.dao.infoEntities.PostDao">
-    <resultMap id="postMapper" type="com.program.moist.entity.infoEntities.Post" autoMapping="true">
+    <resultMap id="postMap" type="com.program.moist.entity.infoEntities.Post" autoMapping="true">
     </resultMap>
 
-    <select id="getByIds" resultMap="postMapper">
+    <select id="getByIds" resultMap="postMap">
         select * from post
         where user_id in
         <foreach collection="ids" item="id" open="(" close=")" separator=",">
             #{id}
         </foreach>
+    </select>
+
+    <select id="getByPage" resultMap="postMap">
+        select * from post
+        where ${name} = #{value};
     </select>
 </mapper> 

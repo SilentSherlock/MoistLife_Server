@@ -3,4 +3,7 @@
 <mapper namespace="com.program.moist.dao.relations.TopicSubDao">
     <resultMap id="topicSubMap" type="com.program.moist.entity.relations.TopicSub">
     </resultMap>
-</mapper> 
+    <select id="getAll" resultMap="topicSubMap">
+        select * from topicsub;
+    </select>
+</mapper>
