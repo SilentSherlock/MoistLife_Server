@@ -22,5 +22,5 @@ public class Comment {
     private String content;
     private Date com_time;
     private Integer parent_com_id;
-    private Integer com_kind;//default 0, deleted 1
+    private Integer com_kind;
 }

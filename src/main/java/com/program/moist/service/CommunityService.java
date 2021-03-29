@@ -219,6 +219,19 @@ public class CommunityService {
         IPage<Post> iPage = postDao.getByPage(page, name, value);
         return iPage.getRecords();
     }
+
+    /**
+     *
+     * @param postId
+     * @return
+     */
+    public Post getPostById(Integer postId) {
+        return postDao.selectById(postId);
+    }
+
+    public void updatePost(Post post) {
+        postDao.updateById(post);
+    }
     //endregion
 
     //region comment curd

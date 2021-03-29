@@ -62,6 +62,10 @@ public class PersonService {
      * @return
      */
     public List<User> getUserFollowing(Integer fromId) {
+        if (fromId == null) {
+            log.info("get user following - params is null");
+            return null;
+        }
         Map<String, Object> params = new HashMap<>();
         params.put("from_user_id", fromId);
         List<Follow> follows = followDao.selectByMap(params);
@@ -80,6 +84,10 @@ public class PersonService {
      * @return
      */
     public List<User> getUserFollowed(Integer toId) {
+        if (toId == null) {
+            log.info("get user followed - params is null");
+            return null;
+        }
         Map<String, Object> params = new HashMap<>();
         params.put("to_user_id", toId);
         List<Follow> followers = followDao.selectByMap(params);
@@ -224,8 +232,18 @@ public class PersonService {
 
         return result.get(0);
     }
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    public List<User> getUserByMap(Map<String, Object> params) {
+        log.info("get user by map");
+        return userDao.selectByMap(params);
+    }
     //endregion
 
     //region mixed method
-
+    //endregion
 }

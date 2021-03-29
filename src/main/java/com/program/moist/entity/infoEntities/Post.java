@@ -25,4 +25,5 @@ public class Post {
     private String location;
     private Date post_time;
     private String post_pictures;
+    private Integer post_state;
 }

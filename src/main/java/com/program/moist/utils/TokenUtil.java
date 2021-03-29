@@ -18,5 +18,9 @@ public class TokenUtil {
     public static final Long DEFAULT_TIME = (long) 60*60*24*7;
     public static final String AREA = "area";
     public static final String TOP_TOPIC = "top_topic";
+    public static final String DEFAULT_POST = "default_post";
+    public static final String USERS = "users";
+    public static final String USER = "user";
+    public static final String COMMENTS = "comments";
 
 }
