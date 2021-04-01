@@ -11,4 +11,17 @@
             #{id}
         </foreach>
     </select>
+
+    <select id="checkByPhone" resultMap="userMap" >
+        select count(*) from user
+        where phone_number = #{phone};
+    </select>
+    <select id="checkByEmail" resultMap="userMap">
+        select count(*) from user
+        where email = #{email};
+    </select>
+    <select id="checkByIN" resultMap="userMap">
+        select count(*) from user
+        where indentify_number = #{IN}
+    </select>
 </mapper> 

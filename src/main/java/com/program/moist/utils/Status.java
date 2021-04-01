@@ -10,5 +10,6 @@ public enum Status {
     NOT_FOUND,
     WRONG_REQUEST,
     DEFAULT,
-    NEED_LOGIN
+    NEED_LOGIN,
+    FALSE
 }

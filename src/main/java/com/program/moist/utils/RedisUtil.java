@@ -352,7 +352,7 @@ public class RedisUtil {
     }
 
     /**
-     * 存入键值对
+     * 存入键值对，不存在会创建HashMap
      * @param key
      * @param hashKey
      * @param hashValue

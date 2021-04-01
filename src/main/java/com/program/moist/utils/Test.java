@@ -30,5 +30,9 @@ public class Test {
         System.out.println("Admin" + JsonUtil.string2Obj(JsonUtil.obj2String(admin), Admin.class));
         System.out.println("AdminList:" + JsonUtil.string2Obj(JsonUtil.obj2String(adminList), List.class, Admin.class));
 
+        for (int i = 0; i < 5; i++) {
+            System.out.println(TokenUtil.getUUID());
+        }
+
     }
 }

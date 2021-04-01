@@ -12,4 +12,8 @@ import java.util.List;
  */
 public interface UserDao extends BaseMapper<User> {
     List<User> getByIds(List<Integer> ids);
+
+    Integer checkByPhone(String phone);
+    Integer checkByEmail(String email);
+    Integer checkByIN(String IN);
 }

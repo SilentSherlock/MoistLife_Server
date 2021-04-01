@@ -188,6 +188,20 @@ public class PersonService {
         else log.info(TAG + name + result + " rows effected");
     }
 
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    public List<User> getUserByMap(Map<String, Object> params) {
+        log.info("get user by map");
+        return userDao.selectByMap(params);
+    }
+    //endregion
+
+    //region mixed method
+
     /**
      * Validate user account by phone number
      * @param phoneNumber
@@ -234,16 +248,27 @@ public class PersonService {
     }
 
     /**
-     *
-     * @param params
+     * 校验用户信息是否重复
+     * @param msg
+     * @param type 0-邮箱 1-手机号 2-身份证号
      * @return
      */
-    public List<User> getUserByMap(Map<String, Object> params) {
-        log.info("get user by map");
-        return userDao.selectByMap(params);
+    public boolean checkMsg(String msg, Integer type) {
+        Integer res = null;
+        switch (type) {
+            case 0:
+                res = userDao.checkByEmail(msg);
+                break;
+            case 1:
+                res = userDao.checkByPhone(msg);
+                break;
+            case 2:
+                res = userDao.checkByIN(msg);
+                break;
+            default:
+                log.info("checkMsg get wrong type");
+        }
+        return res == null;
     }
-    //endregion
-
-    //region mixed method
     //endregion
 }

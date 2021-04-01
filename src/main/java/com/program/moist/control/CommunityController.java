@@ -65,6 +65,11 @@ public class CommunityController {
         return result;
     }
 
+    /**
+     * 获取用户的post
+     * @param userId
+     * @return
+     */
     @RequestMapping("/browse/getPostByUserId")
     public Result getPostByUserId(Integer userId) {
         Result result = new Result();
