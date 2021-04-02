@@ -1,6 +1,5 @@
 package com.program.moist.control;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
 import com.program.moist.service.PersonService;
@@ -8,12 +7,12 @@ import com.program.moist.utils.RedisUtil;
 import com.program.moist.utils.Result;
 import com.program.moist.utils.Status;
 import com.program.moist.utils.TokenUtil;
-import com.sun.el.parser.Token;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Date: 2021/3/12
@@ -107,6 +106,26 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 根据用户id获取用户简略信息
+     * @param userId
+     * @return
+     */
+    @RequestMapping("/before/getUserById")
+    public Result getUserById(Integer userId) {
+        Result result = new Result();
+        User user = personService.getSimpleUser(userId);
+        if (user == null) {
+            result.setStatus(Status.FALSE);
+            result.setDescription("用户id错误");
+        } else {
+            result.setStatus(Status.SUCCESS);
+            result.getResultMap().put(TokenUtil.USER, user);
+        }
+
+        return result;
+    }
+
     @RequestMapping("/addFollow")
     public Result addFollow(Follow follow) {
         Result result = new Result();
@@ -122,5 +141,44 @@ public class UserController {
         result.setStatus(Status.SUCCESS);
         return result;
 
+    }
+
+    /**
+     * 获得关注用户的人
+     * @param toId
+     * @return
+     */
+    @RequestMapping("/getFollowers")
+    public Result getFollowers(Integer toId) {
+        Result result = new Result();
+        List<User> users = personService.getUserFollowed(toId);
+        if (users == null || users.size() == 0) {
+            result.setStatus(Status.DEFAULT);
+            result.setDescription("还没有关注者");
+        } else {
+            result.setStatus(Status.SUCCESS);
+            result.getResultMap().put(TokenUtil.USERS, users);
+        }
+        return result;
+    }
+
+    /**
+     * 获得用户的关注
+     * @param fromId
+     * @return
+     */
+    @RequestMapping("/getFollowing")
+    public Result getFollowing(Integer fromId) {
+        Result result = new Result();
+        List<User> users = personService.getUserFollowing(fromId);
+        if (users == null || users.size() == 0) {
+            result.setStatus(Status.DEFAULT);
+            result.setDescription("没有关注的人");
+        } else {
+            result.setStatus(Status.SUCCESS);
+            result.getResultMap().put(TokenUtil.USERS, users);
+        }
+
+        return result;
     }
 }

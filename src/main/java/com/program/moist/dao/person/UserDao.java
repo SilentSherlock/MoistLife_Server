@@ -16,4 +16,6 @@ public interface UserDao extends BaseMapper<User> {
     Integer checkByPhone(String phone);
     Integer checkByEmail(String email);
     Integer checkByIN(String IN);
+
+    User getUser(Integer userId);
 }

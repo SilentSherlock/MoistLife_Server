@@ -25,4 +25,12 @@ public class ConstUtil {
 
     public static final Integer C_DEFAULT = 1;
     public static final Integer C_DELETE = 2;
+
+    /**
+     * ftp服务器信息
+     */
+    public static final String FTP_IP = "139.196.243.30";
+    public static final int FTP_PORT = 21;
+    public static final String user_name = "sherlock";
+    public static final String password = "FTP_sherlock";
 }

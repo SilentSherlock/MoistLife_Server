@@ -69,6 +69,7 @@ public class PersonService {
         Map<String, Object> params = new HashMap<>();
         params.put("from_user_id", fromId);
         List<Follow> follows = followDao.selectByMap(params);
+        if (follows == null || follows.size() == 0) return new LinkedList<>();
 
         List<Integer> list = new LinkedList<>();
         for (Follow follow :
@@ -91,6 +92,7 @@ public class PersonService {
         Map<String, Object> params = new HashMap<>();
         params.put("to_user_id", toId);
         List<Follow> followers = followDao.selectByMap(params);
+        if (followers == null || followers.size() == 0) return new LinkedList<>();
 
         List<Integer> ids = new ArrayList<>();
         for (Follow f :
@@ -197,6 +199,15 @@ public class PersonService {
     public List<User> getUserByMap(Map<String, Object> params) {
         log.info("get user by map");
         return userDao.selectByMap(params);
+    }
+
+    /**
+     * 取简化版的user信息
+     * @param userId
+     * @return
+     */
+    public User getSimpleUser(Integer userId) {
+        return userDao.getUser(userId);
     }
     //endregion
 

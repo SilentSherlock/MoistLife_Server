@@ -5,7 +5,7 @@
     </resultMap>
 
     <select id="getByIds" resultMap="userMap">
-        select * from user
+        select user_name, user_avatar, user_id from user
         where user_id in
         <foreach collection="ids" item="id" separator="," open="(" close=")">
             #{id}
@@ -23,5 +23,10 @@
     <select id="checkByIN" resultMap="userMap">
         select count(*) from user
         where indentify_number = #{IN}
+    </select>
+
+    <select id="getUser" resultMap="userMap">
+        select user_name, user_avatar, user_id from user
+        where user_id = #{userId}
     </select>
 </mapper> 
