@@ -3,11 +3,14 @@ package com.program.moist.control;
 import com.program.moist.entity.infoEntities.Category;
 import com.program.moist.entity.infoEntities.Information;
 import com.program.moist.entity.relations.FavInfo;
+import com.program.moist.service.FileService;
 import com.program.moist.service.InfoService;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +31,8 @@ public class InfoController {
 
     @Resource
     private InfoService infoService;
+    @Resource
+    private FileService fileService;
 
     @RequestMapping("/browse/getDefaultInfo")
     public Result getDefaultInfo() {
@@ -225,4 +230,17 @@ public class InfoController {
         return result;
     }
 
+    @RequestMapping("/uploadInfoImage")
+    public Result uploadInfoImage(@RequestParam("infoImage")MultipartFile[] multipartFiles, Integer infoId, Integer userId) {
+        Result result = new Result();
+        String path = userId + "/infoImage/" + infoId + "/";
+        List<String> paths = fileService.upload(multipartFiles, path);
+        if (paths == null || paths.size() == 0) {
+            result.setStatus(Status.FALSE);
+        } else {
+            result.setStatus(Status.SUCCESS);
+        }
+        result.getResultMap().put(TokenUtil.PATHS, paths);
+        return result;
+    }
 }

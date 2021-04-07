@@ -1,5 +1,6 @@
 package com.program.moist.others.interceptors;
 
+import com.program.moist.entity.person.User;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -31,9 +32,9 @@ public class UserInterceptor implements HandlerInterceptor {
 
         String login_token = request.getHeader(TokenUtil.LOGIN_TOKEN);
         if (login_token != null && !"".equals(login_token)) {
-            String userStr = (String) RedisUtil.getMapValue(TokenUtil.LOGIN_TOKEN, login_token);
-            if (userStr != null && !"".equals(userStr)) {
-                return true;
+            User user = (User) RedisUtil.getMapValue(TokenUtil.LOGIN_TOKEN, login_token);
+            if (user != null) {
+                return true;//验证成功
             }
         }
 

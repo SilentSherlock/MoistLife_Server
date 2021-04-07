@@ -13,5 +13,7 @@ public class PublicUris {
 
     static {
         uris.add("/info/browse/");
+        uris.add("/community/browse/");
+        uris.add("/user/before/");
     }
 }

@@ -34,4 +34,54 @@ public class Result {
     public Result(Status status, String msg) {
         this(status, msg, new HashMap<>());
     }
+
+    public static Result createBySuccess(String msg) {
+        Result result = new Result(Status.SUCCESS);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createBySuccess() {
+        return Result.createBySuccess("");
+    }
+
+    public static Result createByFalse(String msg) {
+        Result result = new Result(Status.FALSE);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createByFalse() {
+        return Result.createByFalse("");
+    }
+
+    public static Result createByNeedLogin(String msg) {
+        Result result = new Result(Status.NEED_LOGIN);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createByNeedLogin() {
+        return Result.createByNeedLogin("");
+    }
+
+    public static Result createByDefault(String msg) {
+        Result result = new Result(Status.DEFAULT);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createByDefault() {
+        return Result.createByDefault("");
+    }
+
+    public static Result createByWrongRequest(String msg) {
+        Result result = new Result(Status.WRONG_REQUEST);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createByWrongRequest() {
+        return Result.createByWrongRequest("");
+    }
 }

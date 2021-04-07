@@ -5,11 +5,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.util.unit.DataSize;
 
+import javax.servlet.MultipartConfigElement;
 import java.text.SimpleDateFormat;
 
 /**
@@ -18,8 +21,13 @@ import java.text.SimpleDateFormat;
  * Description: describe the class features
  */
 @Configuration
-public class JacksonConfig {
+public class SpringConfig {
 
+    /**
+     * Jackson config
+     * @param builder
+     * @return
+     */
     @Bean
     @Primary
     @ConditionalOnMissingBean(ObjectMapper.class)
@@ -33,5 +41,17 @@ public class JacksonConfig {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略JSON字符串中有bean没有的属性的错误
 
         return mapper;
+    }
+
+    /**
+     * Multipart config
+     * @return
+     */
+    @Bean
+    public MultipartConfigElement multipartConfigElement() {
+        MultipartConfigFactory factory = new MultipartConfigFactory();
+        factory.setMaxFileSize(DataSize.ofMegabytes(10));
+        factory.setMaxRequestSize(DataSize.ofMegabytes(13));
+        return factory.createMultipartConfig();
     }
 }

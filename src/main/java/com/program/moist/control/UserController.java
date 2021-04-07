@@ -2,6 +2,7 @@ package com.program.moist.control;
 
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
+import com.program.moist.service.FileService;
 import com.program.moist.service.PersonService;
 import com.program.moist.utils.RedisUtil;
 import com.program.moist.utils.Result;
@@ -9,7 +10,9 @@ import com.program.moist.utils.Status;
 import com.program.moist.utils.TokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -27,7 +30,8 @@ public class UserController {
 
     @Resource
     private PersonService personService;
-
+    @Resource
+    private FileService fileService;
     /**
      * 用户登录
      * @param account 可以是邮箱也可以是手机号
@@ -178,6 +182,17 @@ public class UserController {
             result.setStatus(Status.SUCCESS);
             result.getResultMap().put(TokenUtil.USERS, users);
         }
+
+        return result;
+    }
+
+    @RequestMapping("/addAvatar")
+    public Result addAvatar(@RequestParam("avatar") MultipartFile file, Integer userId) {
+        Result result = new Result();
+        String path = userId + "/avatar/";
+        String filePath = fileService.upload(file, path);
+        result.setStatus(Status.SUCCESS);
+        result.getResultMap().put(TokenUtil.PATH, filePath);
 
         return result;
     }

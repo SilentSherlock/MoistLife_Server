@@ -13,10 +13,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
+    /**
+     * 两个星号递归匹配子目录
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new UserInterceptor()).addPathPatterns(
-                "/info/**"
+                "/info/**",
+                "/community/**",
+                "/user/**"
         );
     }
 

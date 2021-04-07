@@ -1,7 +1,13 @@
 package com.program.moist.utils;
 
 import com.program.moist.entity.person.Admin;
+import org.springframework.util.CollectionUtils;
+import org.thymeleaf.expression.Lists;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,7 +18,7 @@ import java.util.List;
  */
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Json test
         Admin admin = new Admin();
@@ -34,5 +40,9 @@ public class Test {
             System.out.println(TokenUtil.getUUID());
         }
 
+        File file = new File("D:/files/tips/pom.xml");
+        List<File> files = new ArrayList<>();
+        files.add(file);
+        FTPUtil.upload("", files);
     }
 }

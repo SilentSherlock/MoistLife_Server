@@ -31,6 +31,7 @@ public class ConstUtil {
      */
     public static final String FTP_IP = "139.196.243.30";
     public static final int FTP_PORT = 21;
-    public static final String user_name = "sherlock";
-    public static final String password = "FTP_sherlock";
+    public static final String FTP_USER = "sherlock";
+    public static final String FTP_PASS = "FTP_sherlock";
+    public static final String FTP_DIR = "ftp://" + FTP_IP + "/data/";
 }

@@ -8,11 +8,14 @@ import com.program.moist.entity.relations.ThumbUpComment;
 import com.program.moist.entity.relations.ThumbUpPost;
 import com.program.moist.entity.relations.TopicSub;
 import com.program.moist.service.CommunityService;
+import com.program.moist.service.FileService;
 import com.program.moist.service.PersonService;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -32,6 +35,8 @@ public class CommunityController {
     private CommunityService communityService;
     @Resource
     private PersonService personService;
+    @Resource
+    private FileService fileService;
 
     /**
      * 根据Redis中缓存的热门主题，取Post
@@ -245,6 +250,21 @@ public class CommunityController {
 
         communityService.deleteTopicSubByMap(params);
         result.setStatus(Status.SUCCESS);
+        return result;
+    }
+
+    @RequestMapping("/uploadPostImage")
+    public Result uploadPostImage(@RequestParam("postImage")MultipartFile[] multipartFiles, Integer userId, Integer postId) {
+        Result result = new Result();
+        String path = userId + "/postImage/" + postId + "/";
+        List<String> paths = fileService.upload(multipartFiles, path);
+        if (paths == null || paths.size() == 0) {
+            result.setStatus(Status.FALSE);
+        } else {
+            result.setStatus(Status.SUCCESS);
+        }
+        result.getResultMap().put(TokenUtil.PATHS, paths);
+
         return result;
     }
 }

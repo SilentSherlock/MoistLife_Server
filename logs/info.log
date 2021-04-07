@@ -1,149 +1,45 @@
-2021-03-25 17:39:40,630 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-25 17:39:40,784 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-03-25 17:39:41,102 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 16072 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-03-25 17:39:41,104 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-03-25 17:39:42,433 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-25 17:39:42,433 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-03-25 17:39:42,434 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-03-25 17:39:42,495 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-03-25 17:39:42,757 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
-2021-03-25 17:39:42,856 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
-2021-03-25 17:39:42,859 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-03-25 17:39:42,903 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Topic". 
-2021-03-25 17:39:42,929 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
-2021-03-25 17:39:42,951 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
-2021-03-25 17:39:42,976 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
-2021-03-25 17:39:42,999 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-03-25 17:39:43,018 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-03-25 17:39:43,038 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
-2021-03-25 17:39:43,062 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-03-25 17:39:43,080 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-03-25 17:39:43,101 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
-2021-03-25 17:39:44,225 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-03-25 17:39:44,253 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.461 seconds (JVM running for 4.671) 
-2021-03-25 17:39:44,257 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-03-25 17:40:23,744 [http-nio-0.0.0.0-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-03-25 17:40:23,768 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-03-25 17:40:23,791 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-03-25 17:40:23,792 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : InfoController.getInfoByPage(..)1-jksdkf-java.lang.Object@61a46152- 
-2021-03-25 17:40:23,792 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getInfoByPage 
-2021-03-25 17:40:23,797 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.service.InfoService : InfoService-getInfoByPage- 
-2021-03-25 17:40:23,852 [http-nio-0.0.0.0-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
-2021-03-25 17:40:24,244 [http-nio-0.0.0.0-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
-2021-03-25 17:40:24,268 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-03-25 17:40:24,272 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-03-25 17:40:24,275 [http-nio-0.0.0.0-8080-exec-2] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='value', mode=IN, javaType=class java.lang.Object, jdbcType=null, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #1 with JdbcType null . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.sql.SQLException: Invalid argument value: java.io.NotSerializableException] with root cause 
-java.io.NotSerializableException: java.lang.Object
-	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1185)
-	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:349)
-	at com.mysql.cj.AbstractQueryBindings.setSerializableObject(AbstractQueryBindings.java:589)
-	at com.mysql.cj.AbstractQueryBindings.setObject(AbstractQueryBindings.java:265)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.setObject(ClientPreparedStatement.java:1669)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
-	at org.apache.ibatis.type.ObjectTypeHandler.setNonNullParameter(ObjectTypeHandler.java:31)
-	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73)
-	at org.apache.ibatis.type.UnknownTypeHandler.setNonNullParameter(UnknownTypeHandler.java:67)
-	at org.apache.ibatis.type.BaseTypeHandler.setParameter(BaseTypeHandler.java:73)
-	at com.baomidou.mybatisplus.core.MybatisParameterHandler.setParameters(MybatisParameterHandler.java:213)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:94)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
-	at com.sun.proxy.$Proxy130.parameterize(Unknown Source)
-	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.prepareStatement(MybatisSimpleExecutor.java:99)
-	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doQuery(MybatisSimpleExecutor.java:68)
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
-	at com.baomidou.mybatisplus.core.executor.MybatisCachingExecutor.query(MybatisCachingExecutor.java:165)
-	at com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor.willDoQuery(PaginationInnerInterceptor.java:141)
-	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:75)
-	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
-	at com.sun.proxy.$Proxy129.query(Unknown Source)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
-	at com.sun.proxy.$Proxy93.selectList(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForIPage(MybatisMapperMethod.java:122)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:86)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy101.getByPage(Unknown Source)
-	at com.program.moist.service.InfoService.getInfoByPage(InfoService.java:85)
-	at com.program.moist.control.InfoController.getInfoByPage(InfoController.java:160)
-	at com.program.moist.control.InfoController$$FastClassBySpringCGLIB$$16e93438.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
-	at com.program.moist.control.InfoController$$EnhancerBySpringCGLIB$$71b55883.getInfoByPage(<generated>)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-04-04 19:07:51,482 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-04-04 19:07:51,629 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-04-04 19:07:51,961 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 10252 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-04-04 19:07:51,963 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-04-04 19:07:53,160 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-04-04 19:07:53,161 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-04-04 19:07:53,161 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-04-04 19:07:53,217 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-04-04 19:07:53,473 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Category". 
+2021-04-04 19:07:53,569 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Information". 
+2021-04-04 19:07:53,572 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-04-04 19:07:53,619 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.infoEntities.Topic". 
+2021-04-04 19:07:53,642 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.Admin". 
+2021-04-04 19:07:53,665 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.person.User". 
+2021-04-04 19:07:53,690 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-04-04 19:07:53,713 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-04-04 19:07:53,734 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-04-04 19:07:53,752 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-04-04 19:07:53,768 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-04-04 19:07:53,785 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-04-04 19:07:53,803 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-04-04 19:07:54,812 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-04-04 19:07:54,835 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.197 seconds (JVM running for 4.287) 
+2021-04-04 19:07:54,839 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-04-04 19:11:01,438 [http-nio-0.0.0.0-8080-exec-3] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-04-04 19:11:24,828 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-04-04 19:11:24,830 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : InfoController.uploadInfoImage(..)[Lorg.springframework.web.multipart.MultipartFile;@3cc7ccbf-2-4- 
+2021-04-04 19:11:24,830 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/uploadInfoImage 
+2021-04-04 19:11:24,850 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.utils.FTPUtil : start upload file 
+2021-04-04 19:11:25,088 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.utils.FTPUtil : ftp path: / 
+2021-04-04 19:11:25,449 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.utils.FTPUtil : ftp path: /data/4/infoImage/2 
+2021-04-04 19:11:27,386 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.utils.FTPUtil : upload file true 
+2021-04-04 19:11:27,387 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-04-04 19:11:27,388 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-04-04 19:11:27,389 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-04-04 19:11:55,438 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-04-04 19:11:55,438 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.uploadInfoImage(..)[Lorg.springframework.web.multipart.MultipartFile;@6b5a9e01-2-4- 
+2021-04-04 19:11:55,438 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/uploadInfoImage 
+2021-04-04 19:11:55,443 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.utils.FTPUtil : start upload file 
+2021-04-04 19:11:55,626 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.utils.FTPUtil : ftp path: / 
+2021-04-04 19:11:55,694 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.utils.FTPUtil : ftp path: /data/4/infoImage/2 
+2021-04-04 19:12:00,137 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.utils.FTPUtil : upload file true 
+2021-04-04 19:12:00,138 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-04-04 19:12:00,138 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-04-04 19:12:00,138 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 

@@ -6,6 +6,7 @@ import org.apache.commons.net.ftp.FTPClient;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,12 +18,19 @@ import java.util.List;
 public class FTPUtil {
 
     public static boolean upload(String path, List<File> files) throws IOException {
-        FTPUtil ftpUtil = new FTPUtil(ConstUtil.FTP_IP, ConstUtil.FTP_PORT, ConstUtil.user_name, ConstUtil.password);
+        FTPUtil ftpUtil = new FTPUtil(ConstUtil.FTP_IP, ConstUtil.FTP_PORT, ConstUtil.FTP_USER, ConstUtil.FTP_PASS);
         log.info("start upload file");
-        boolean result = ftpUtil.uploadFile(path, files);
+        boolean result = ftpUtil.uploadFile("data/" + path, files);
         log.info("upload file " + result);
         return result;
     }
+
+    public static boolean upload(String path, File file) throws IOException {
+        List<File> files = new ArrayList<>();
+        files.add(file);
+        return FTPUtil.upload(path, files);
+    }
+
     private String ip;
     private int port;
     private String user;
@@ -42,12 +50,20 @@ public class FTPUtil {
         FileInputStream fileInputStream = null;
         if (connect()) {
             try {
-                ftpClient.changeWorkingDirectory(path);
+                log.info("ftp path: " + ftpClient.printWorkingDirectory());
+                if (!ftpClient.changeWorkingDirectory(path)) {
+                    String[] paths = path.split("/");//目录不存在,则创建子目录
+                    for (String cur:
+                            paths) {
+                        ftpClient.makeDirectory(cur);
+                        ftpClient.changeWorkingDirectory(cur);
+                    }
+                }
+                log.info("ftp path: " + ftpClient.printWorkingDirectory());
                 ftpClient.setBufferSize(1024);
                 ftpClient.setControlEncoding("UTF-8");
                 ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
                 ftpClient.enterLocalPassiveMode();
-
                 for (File file :
                         files) {
                     fileInputStream = new FileInputStream(file);
@@ -68,7 +84,7 @@ public class FTPUtil {
     private boolean connect() {
         boolean isConnect = false;
         try {
-            ftpClient.connect(ip);
+            ftpClient.connect(ip, port);
             isConnect = ftpClient.login(user, password);
         } catch (IOException e) {
             log.error("FTP服务器登录失败");

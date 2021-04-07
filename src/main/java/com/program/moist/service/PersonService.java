@@ -6,6 +6,7 @@ import com.program.moist.dao.relations.FollowDao;
 import com.program.moist.entity.person.Admin;
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
+import com.program.moist.utils.Base64Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -223,6 +224,8 @@ public class PersonService {
         log.info(TAG + name);
 
         Map<String, Object> params = new HashMap<>();
+        phoneNumber = Base64Util.decode(phoneNumber);
+        password = Base64Util.decode(password);
         params.put("phone_number", phoneNumber);
         params.put("password", password);
         List<User> result = userDao.selectByMap(params);
@@ -245,6 +248,8 @@ public class PersonService {
         String name = "userValidateByEmail-";
         log.info(TAG + name);
 
+        email = Base64Util.decode(email);
+        password = Base64Util.decode(password);
         Map<String, Object> params = new HashMap<>();
         params.put("email", email);
         params.put("password", password);

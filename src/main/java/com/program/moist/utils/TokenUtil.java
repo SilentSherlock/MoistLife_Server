@@ -23,6 +23,8 @@ public class TokenUtil {
     public static final String DEFAULT_POST = "default_post";
     public static final String USERS = "users";
     public static final String USER = "user";
+    public static final String PATHS = "paths";
+    public static final String PATH = "path";
     public static final String COMMENTS = "comments";
 
     public static String getUUID() {
