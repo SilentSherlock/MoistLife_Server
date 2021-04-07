@@ -9,6 +9,6 @@ import lombok.Data;
  */
 @Data
 public class Follow {
-    private Integer from_user_id;
-    private Integer to_user_id;
+    private Integer fromUserId;
+    private Integer toUserId;
 }

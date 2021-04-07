@@ -1,6 +1,5 @@
 package com.program.moist.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.program.moist.dao.infoEntities.CategoryDao;
@@ -15,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.swing.text.html.parser.Entity;
 import java.util.*;
 
 /**
@@ -174,7 +172,7 @@ public class InfoService {
         List<Integer> ids = new LinkedList<>();
         for (FavInfo cur :
                 favInfos) {
-            ids.add(cur.getInfo_id());
+            ids.add(cur.getInfoId());
         }
 
         return informationDao.getByIds(ids);
@@ -190,8 +188,8 @@ public class InfoService {
         List<CategorySub> list = categorySubDao.getAll();
         HashMap<Integer, Integer> map = new HashMap<>();
         for (CategorySub categorySub : list) {
-            Integer count = map.getOrDefault(categorySub.getCate_id(), 0);
-            map.put(categorySub.getCate_id(), ++count);
+            Integer count = map.getOrDefault(categorySub.getCateId(), 0);
+            map.put(categorySub.getCateId(), ++count);
         }
 
         Set<Map.Entry<Integer, Integer>> sets = map.entrySet();

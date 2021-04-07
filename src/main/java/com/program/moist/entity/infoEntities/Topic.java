@@ -11,9 +11,9 @@ import java.util.Date;
  */
 @Data
 public class Topic {
-    private Integer topic_id;
-    private Integer parent_topic_id;
-    private String topic_name;
-    private Date create_time;
-    private Date update_time;
+    private Integer topicId;
+    private Integer parentTopicId;
+    private String topicName;
+    private Date createTime;
+    private Date updateTime;
 }

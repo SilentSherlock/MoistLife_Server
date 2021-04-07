@@ -67,7 +67,7 @@ public class UserController {
         result.setStatus(Status.SUCCESS);
         result.setDescription("登录成功");
         result.getResultMap().put(TokenUtil.LOGIN_TOKEN, login_token);
-        result.getResultMap().put(TokenUtil.USER, user);
+        //result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
     }
@@ -86,7 +86,7 @@ public class UserController {
         RedisUtil.putMapValue(TokenUtil.LOGIN_TOKEN, login_token, user);
         result.setDescription("注册成功");
         result.getResultMap().put(TokenUtil.LOGIN_TOKEN, login_token);
-        result.getResultMap().put(TokenUtil.USER, user);
+        //result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
     }
@@ -193,6 +193,15 @@ public class UserController {
         String filePath = fileService.upload(file, path);
         result.setStatus(Status.SUCCESS);
         result.getResultMap().put(TokenUtil.PATH, filePath);
+
+        return result;
+    }
+
+    @RequestMapping("/getUserInfo")
+    public Result getUserInfo(String userToken) {
+        User user = (User) RedisUtil.getMapValue(TokenUtil.LOGIN_TOKEN, userToken);
+        Result result = Result.createBySuccess();
+        result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
     }

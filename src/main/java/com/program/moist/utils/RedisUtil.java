@@ -38,6 +38,16 @@ public class RedisUtil {
     }
 
     //region key operations
+
+    /**
+     * 删除所有键值对
+     * @return
+     */
+    public static Long deleteAll() {
+        Set<String> keys = redisUtil.redisTemplate.keys("*");
+        if (keys == null || keys.size() == 0) return (long) 0;
+        return redisUtil.redisTemplate.delete(keys);
+    }
     /**
      * 设置key持续时间
      * @param key 键

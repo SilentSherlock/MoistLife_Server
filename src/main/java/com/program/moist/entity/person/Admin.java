@@ -10,13 +10,13 @@ import lombok.Data;
 @Data
 public class Admin {
 
-    private Integer admin_id;
-    private String admin_name;
+    private Integer adminId;
+    private String adminName;
     private String password;
 
     public Admin(Integer i, String valueOf, String valueOf1) {
-        this.admin_id = i;
-        this.admin_name = valueOf;
+        this.adminId = i;
+        this.adminName = valueOf;
         this.password = valueOf1;
     }
 

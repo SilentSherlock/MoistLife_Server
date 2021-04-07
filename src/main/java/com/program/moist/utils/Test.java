@@ -21,7 +21,7 @@ public class Test {
     public static void main(String[] args) throws IOException {
 
         //Json test
-        Admin admin = new Admin();
+        /*Admin admin = new Admin();
         admin.setAdmin_id(3232);
         admin.setAdmin_name("fuck");
 
@@ -38,11 +38,19 @@ public class Test {
 
         for (int i = 0; i < 5; i++) {
             System.out.println(TokenUtil.getUUID());
-        }
+        }*/
 
-        File file = new File("D:/files/tips/pom.xml");
+        //file test
+        /*File file = new File("D:/files/tips/pom.xml");
         List<File> files = new ArrayList<>();
         files.add(file);
-        FTPUtil.upload("", files);
+        FTPUtil.upload("", files);*/
+
+        //Base64 test
+        String target1 = Base64Util.encode("sherlock");
+        String target2 = Base64Util.encode("123456");
+        String origin1 = Base64Util.decode(target1);
+        String origin2 = Base64Util.decode(target2);
+        System.out.println(target1 + " " + target2 + " " + origin1 + " " + origin2);
     }
 }

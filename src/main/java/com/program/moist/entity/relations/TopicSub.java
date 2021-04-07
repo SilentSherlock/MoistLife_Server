@@ -9,6 +9,6 @@ import lombok.Data;
  */
 @Data
 public class TopicSub {
-    private Integer user_id;
-    private Integer topic_id;
+    private Integer userId;
+    private Integer topicId;
 }

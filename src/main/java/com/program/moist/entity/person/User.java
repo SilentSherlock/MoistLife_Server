@@ -10,12 +10,12 @@ import lombok.Data;
 @Data
 public class User {
 
-    private Integer user_id;
-    private String user_name;
-    private String phone_number;
+    private Integer userId;
+    private String userName;
+    private String phoneNumber;
     private String email;
     private String password;
-    private String identify_number;
-    private Integer user_kind;
-    private String user_avatar;
+    private String identifyNumber;
+    private Integer userKind;
+    private String userAvatar;
 }

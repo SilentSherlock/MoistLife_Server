@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.program.moist.dao.infoEntities.InformationDao">
-    <resultMap id="infoMap" type="com.program.moist.entity.infoEntities.Information">
-        <id property="info_id" column="info_id"/>
-        <result property="info_title" column="info_title"/>
-        <result property="price" column="price"/>
-        <result property="cate_id" column="cate_id"/>
-        <result property="area" column="area"/>
-        <result property="detail" column="detail"/>
-        <result property="info_pictures" column="info_pictures"/>
-        <result property="user_id" column="user_id"/>
-        <result property="info_time" column="info_time"/>
-        <result property="update_time" column="update_time"/>
+    <resultMap id="infoMap" type="com.program.moist.entity.infoEntities.Information" autoMapping="true">
     </resultMap>
 
     <select id="getById" resultMap="infoMap">

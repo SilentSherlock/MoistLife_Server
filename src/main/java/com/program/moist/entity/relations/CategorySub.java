@@ -9,6 +9,6 @@ import lombok.Data;
  */
 @Data
 public class CategorySub {
-    private Integer user_id;
-    private Integer cate_id;
+    private Integer userId;
+    private Integer cateId;
 }

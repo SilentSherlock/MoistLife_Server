@@ -111,7 +111,7 @@ public class CommunityService {
         List<Integer> ids = new LinkedList<>();
         for (TopicSub sub :
                 subs) {
-            ids.add(sub.getTopic_id());
+            ids.add(sub.getTopicId());
         }
         return getTopicByIds(ids);
     }
@@ -393,7 +393,7 @@ public class CommunityService {
         List<Integer> ids = new LinkedList<>();
         for (FavPost post :
                 favPosts) {
-            ids.add(post.getPost_id());
+            ids.add(post.getPostId());
         }
 
         return postDao.getByIds(ids);
@@ -409,8 +409,8 @@ public class CommunityService {
         List<TopicSub> list = topicSubDao.getAll();
         HashMap<Integer, Integer> map = new HashMap<>();
         for (TopicSub topicSub : list) {
-            Integer count = map.getOrDefault(topicSub.getTopic_id(), 0);
-            map.put(topicSub.getTopic_id(), ++count);
+            Integer count = map.getOrDefault(topicSub.getTopicId(), 0);
+            map.put(topicSub.getTopicId(), ++count);
         }
 
         Set<Map.Entry<Integer, Integer>> set = map.entrySet();

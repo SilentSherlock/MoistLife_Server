@@ -15,5 +15,6 @@ public class PublicUris {
         uris.add("/info/browse/");
         uris.add("/community/browse/");
         uris.add("/user/before/");
+        uris.add("/manage/before/");
     }
 }

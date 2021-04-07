@@ -61,7 +61,7 @@ public class CommunityController {
         List<Post> posts = new ArrayList<>();
         for (Topic topic :
                 topics) {
-            posts.addAll(communityService.getPostByPage(1, 3, "topic_id", topic.getTopic_id()));
+            posts.addAll(communityService.getPostByPage(1, 3, "topicId", topic.getTopicId()));
         }
 
         result.setStatus(Status.SUCCESS);
@@ -80,7 +80,7 @@ public class CommunityController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("user_id", userId);
+        params.put("userId", userId);
         List<Post> posts = communityService.getPostByMap(params);
         if (posts == null) {
             result.setStatus(Status.WRONG_REQUEST);
@@ -96,7 +96,7 @@ public class CommunityController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("post_id", postId);
+        params.put("postId", postId);
         List<Comment> comments = communityService.getCommentByMap(params);
         if (comments == null) {
             result.setStatus(Status.WRONG_REQUEST);
@@ -117,7 +117,7 @@ public class CommunityController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("user_id", userId);
+        params.put("userId", userId);
         List<TopicSub> topicSubs = communityService.getTopicSubByMap(params);
 
         List<Topic> topics;
@@ -135,7 +135,7 @@ public class CommunityController {
         List<Post> posts = new LinkedList<>();
         for (Topic topic:
              topics) {
-            posts.addAll(communityService.getPostByPage(1, 3, "topic_id", topic.getTopic_id()));
+            posts.addAll(communityService.getPostByPage(1, 3, "topic_id", topic.getTopicId()));
         }
 
         result.setStatus(Status.SUCCESS);
@@ -155,7 +155,7 @@ public class CommunityController {
         List<User> follows = personService.getUserFollowing(userId);
         if (follows == null || follows.size() == 0) {
             Map<String, Object> params = new HashMap<>();
-            params.put("user_kind", ConstUtil.U_MEDIUM);
+            params.put("userKind", ConstUtil.U_MEDIUM);
             follows = personService.getUserByMap(params);
 
             result.setDescription("没有关注用户呢,推荐一些:-)");
@@ -166,7 +166,7 @@ public class CommunityController {
         List<Post> post = new LinkedList<>();
         for (User user :
                 follows) {
-            post.addAll(communityService.getPostByPage(1, 3, "user_id", user.getUser_id()));
+            post.addAll(communityService.getPostByPage(1, 3, "user_id", user.getUserId()));
         }//默认每个关注取3篇，后续关注推荐机制有待修改
 
         result.setStatus(Status.SUCCESS);
@@ -186,7 +186,7 @@ public class CommunityController {
     public Result deletePost(Integer postId) {
         Result result = new Result();
         Post post = communityService.getPostById(postId);
-        post.setPost_state(ConstUtil.P_DELETE);
+        post.setPostState(ConstUtil.P_DELETE);
         result.setStatus(Status.SUCCESS);
         return result;
     }
@@ -202,7 +202,7 @@ public class CommunityController {
     @RequestMapping("/deleteThumbUpPost")
     public Result deleteThumbUpPost(ThumbUpPost thumbUpPost) {
         Result result = new Result(Status.SUCCESS);
-        communityService.deleteThumbUpPost(thumbUpPost.getUser_id(), thumbUpPost.getPost_id());
+        communityService.deleteThumbUpPost(thumbUpPost.getUserId(), thumbUpPost.getPostId());
         return result;
     }
 
@@ -218,7 +218,7 @@ public class CommunityController {
     public Result deleteComment(Integer comId) {
         Result result = new Result();
         Map<String, Object> params = new HashMap<>();
-        params.put("com_id", comId);
+        params.put("comId", comId);
         communityService.deleteCommentByMap(params);
         result.setStatus(Status.SUCCESS);
         return result;
@@ -245,8 +245,8 @@ public class CommunityController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("user_id", topicSub.getUser_id()); 
-        params.put("topic_id", topicSub.getTopic_id());
+        params.put("userId", topicSub.getUserId());
+        params.put("topicId", topicSub.getTopicId());
 
         communityService.deleteTopicSubByMap(params);
         result.setStatus(Status.SUCCESS);

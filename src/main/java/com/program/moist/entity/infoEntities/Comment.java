@@ -15,12 +15,12 @@ import java.util.Date;
 public class Comment {
 
     @TableId(type = IdType.AUTO)
-    private Integer com_id;
-    private Integer from_user_id;
-    private Integer to_user_id;
-    private Integer post_id;
+    private Integer comId;
+    private Integer fromUserId;
+    private Integer toUserId;
+    private Integer postId;
     private String content;
-    private Date com_time;
-    private Integer parent_com_id;
-    private Integer com_kind;
+    private Date comTime;
+    private Integer parentComId;
+    private Integer comKind;
 }

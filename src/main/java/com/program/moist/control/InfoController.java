@@ -74,7 +74,7 @@ public class InfoController {
     public Result getInfoByKind(HttpServletRequest request) {
         Result result = new Result();
 
-        String value = request.getParameter("cate_id");
+        String value = request.getParameter("cateId");
         if (value == null || "".equals(value)) {
             result.setStatus(Status.WRONG_REQUEST);
             result.setDescription("need parameter cate_id");
@@ -97,7 +97,7 @@ public class InfoController {
             list = JsonUtil.string2Obj(RedisUtil.getCommon(key), List.class, ProcessHandle.Info.class);
         } else {
             Map<String, Object> params = new HashMap<>();
-            params.put("cate_id", cate_id);
+            params.put("cateId", cate_id);
             list = infoService.getInfoByMap(params);
 
             RedisUtil.setCommon(key, JsonUtil.obj2String(list));
@@ -138,7 +138,7 @@ public class InfoController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("user_id", userId);
+        params.put("userId", userId);
         List<Information> list = infoService.getInfoByMap(params);
         if (list == null) {
             result.setStatus(Status.WRONG_REQUEST);
@@ -195,7 +195,7 @@ public class InfoController {
     public Result deleteInfo(Integer infoId) {
         Result result = new Result();
         Map<String, Object> params = new HashMap<>();
-        params.put("info_id", infoId);
+        params.put("infoId", infoId);
         infoService.deleteInfoByMap(params);
 
         result.setStatus(Status.SUCCESS);
@@ -225,7 +225,7 @@ public class InfoController {
     public Result deleteFavInfo(FavInfo favInfo) {
         Result result = new Result();
 
-        infoService.deleteFavInfo(favInfo.getInfo_id(), favInfo.getUser_id());
+        infoService.deleteFavInfo(favInfo.getInfoId(), favInfo.getUserId());
         result.setStatus(Status.SUCCESS);
         return result;
     }
