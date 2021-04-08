@@ -14,6 +14,7 @@ import org.springframework.util.unit.DataSize;
 
 import javax.servlet.MultipartConfigElement;
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 /**
  * Date: 2021/3/15
@@ -37,7 +38,7 @@ public class SpringConfig {
         mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);//只序列化非空字段
         mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);//忽略空bean转json的错误
         mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);//不将时间转换为时间戳
-        mapper.setDateFormat(new SimpleDateFormat("yyyy-mm-dd hh:mm:ss"));//设置时间样式
+        mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));//设置时间样式
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//忽略JSON字符串中有bean没有的属性的错误
 
         return mapper;

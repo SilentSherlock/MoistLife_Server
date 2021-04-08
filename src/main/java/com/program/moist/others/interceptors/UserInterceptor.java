@@ -32,8 +32,8 @@ public class UserInterceptor implements HandlerInterceptor {
 
         String login_token = request.getHeader(TokenUtil.LOGIN_TOKEN);
         if (login_token != null && !"".equals(login_token)) {
-            User user = (User) RedisUtil.getMapValue(TokenUtil.LOGIN_TOKEN, login_token);
-            if (user != null) {
+            Object person = RedisUtil.getMapValue(TokenUtil.LOGIN_TOKEN, login_token);
+            if (person != null) {
                 return true;//验证成功
             }
         }

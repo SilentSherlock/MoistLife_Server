@@ -30,6 +30,7 @@ public class InfoManageController {
 
     @RequestMapping("/updateCategory")
     public Result updateCategory(Category category) {
+        System.out.println(category.toString());
         infoService.updateCategory(category);
         return Result.createBySuccess();
     }
