@@ -23,6 +23,9 @@ public class ConstUtil {
     public static final Integer P_MODIFY = 2;
     public static final Integer P_DELETE = 3;
 
+    /**
+     * 评论状态码
+     */
     public static final Integer C_DEFAULT = 1;
     public static final Integer C_DELETE = 2;
 

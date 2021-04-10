@@ -1,6 +1,5 @@
 package com.program.moist.others.interceptors;
 
-import com.program.moist.entity.person.User;
 import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;

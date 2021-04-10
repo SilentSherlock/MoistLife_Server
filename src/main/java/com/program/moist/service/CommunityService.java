@@ -214,9 +214,11 @@ public class CommunityService {
      * @param value
      * @return
      */
-    public List<Post> getPostByPage(Integer index, Integer size, String name, Object value) {
+    public List<Post> getPostByPage(Integer index, Integer size, String name, String value) {
         Page<Post> page = new Page<>(index, size);
-        IPage<Post> iPage = postDao.getByPage(page, name, value);
+        IPage<Post> iPage;
+        if (name.endsWith("id")) iPage = postDao.getByPage(page, name, Integer.parseInt(value));
+        else iPage = postDao.getByPage(page, name, value);
         return iPage.getRecords();
     }
 

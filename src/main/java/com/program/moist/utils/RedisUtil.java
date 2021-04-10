@@ -7,10 +7,9 @@ import org.springframework.util.CollectionUtils;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,8 +34,9 @@ public class RedisUtil {
     @PostConstruct
     private void init() {
         redisUtil = this;
+        putMapValue(TokenUtil.LOGIN_TOKEN, TokenUtil.getUUID(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        //expire(TokenUtil.LOGIN_TOKEN, Default_TIME);
     }
-
     //region key operations
 
     /**

@@ -139,9 +139,9 @@ public class UserController {
     }
 
     @RequestMapping("/deleteFollow")
-    public Result deleteFollow(Integer fromId) {
+    public Result deleteFollow(Follow follow) {
         Result result = new Result();
-        personService.deleteFollow(fromId);
+        personService.deleteFollow(follow);
         result.setStatus(Status.SUCCESS);
         return result;
 
@@ -191,6 +191,7 @@ public class UserController {
         Result result = new Result();
         String path = userId + "/avatar/";
         String filePath = fileService.upload(file, path);
+        personService.updateUserColumnById("user_avatar", filePath, userId);//此是列名
         result.setStatus(Status.SUCCESS);
         result.getResultMap().put(TokenUtil.PATH, filePath);
 

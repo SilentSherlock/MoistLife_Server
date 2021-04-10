@@ -14,6 +14,6 @@
 
     <select id="getByPage" resultMap="postMap">
         select * from post
-        where ${name} = #{value};
+        where ${name} = #{value}
     </select>
 </mapper> 

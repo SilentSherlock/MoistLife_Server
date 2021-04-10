@@ -22,5 +22,6 @@ public interface InformationDao extends BaseMapper<Information> {
     int delete(Integer infoId);//for admin
     int deleteByUserId(@Param("info_id") Integer infoId, @Param("user_id") Integer userId);//for user
     List<Information> getByIds(List<Integer> ids);
-    IPage<Information> getByPage(Page<Information> page, @Param("name") String columnName, @Param("value") Object columnValue);
+    IPage<Information> getByPage(Page<Information> page, @Param("name") String columnName, @Param("value") String columnValue);
+    IPage<Information> getByPage(Page<Information> page, @Param("name") String columnName, @Param("value") Integer columnValue);
 }

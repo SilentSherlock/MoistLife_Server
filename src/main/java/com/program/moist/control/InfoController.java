@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,28 +35,23 @@ public class InfoController {
 
     @RequestMapping("/browse/getDefaultInfo")
     public Result getDefaultInfo() {
-        Result result = new Result();
-        result.setStatus(Status.SUCCESS);
-
         List<Information> list;
         if (RedisUtil.hasKey(TokenUtil.DEFAULT_INFO)) {
-            list = JsonUtil.string2Obj(RedisUtil.getCommon(TokenUtil.LOGIN_TOKEN), List.class, Information.class);
+            list = JsonUtil.string2Obj(RedisUtil.getCommon(TokenUtil.DEFAULT_INFO), List.class, Information.class);
         } else {
             Map<String, Object> params = new HashMap<>();
-            params.put("area", "北京");
+            params.put("area", "paris");
             list = infoService.getInfoByMap(params);
             RedisUtil.setCommon(TokenUtil.DEFAULT_INFO, JsonUtil.obj2String(list));
         }
 
+        Result result = Result.createBySuccess();
         result.getResultMap().put(TokenUtil.DEFAULT_INFO, list);
         return result;
     }
 
     @RequestMapping("/browse/getAllCate")
     public Result getAllCate() {
-        Result result = new Result();
-        result.setStatus(Status.SUCCESS);
-
         List<Category> categories;
         if (RedisUtil.hasKey(TokenUtil.CATEGORY)) {
             categories = JsonUtil.string2Obj(RedisUtil.getCommon(TokenUtil.CATEGORY), List.class, Category.class);
@@ -66,70 +60,48 @@ public class InfoController {
             RedisUtil.setCommon(TokenUtil.CATEGORY, JsonUtil.obj2String(categories));
         }
 
+        Result result = Result.createBySuccess();
         result.getResultMap().put(TokenUtil.CATEGORY, categories);
         return result;
     }
 
     @RequestMapping("/browse/getInfoByCate")
-    public Result getInfoByKind(HttpServletRequest request) {
-        Result result = new Result();
-
-        String value = request.getParameter("cateId");
-        if (value == null || "".equals(value)) {
-            result.setStatus(Status.WRONG_REQUEST);
-            result.setDescription("need parameter cate_id");
-            return result;
-        }
-
-        Integer cate_id = null;
-        try {
-            cate_id = Integer.parseInt(value);
-        } catch (Exception e) {
-            log.error("value is not num string", e);
-            result.setStatus(Status.WRONG_REQUEST);
-            result.setDescription("value is not num string");
-            return result;
-        }
-
+    public Result getInfoByKind(Integer cateId) {
         List<Information> list;
-        String key = TokenUtil.CATEGORY + cate_id;
+        String key = TokenUtil.CATEGORY + cateId;
         if (RedisUtil.hasKey(key)) {
             list = JsonUtil.string2Obj(RedisUtil.getCommon(key), List.class, ProcessHandle.Info.class);
         } else {
             Map<String, Object> params = new HashMap<>();
-            params.put("cateId", cate_id);
+            params.put("cate_id", cateId);
             list = infoService.getInfoByMap(params);
-
             RedisUtil.setCommon(key, JsonUtil.obj2String(list));
         }
 
+        Result result = Result.createBySuccess();
         result.getResultMap().put(key, list);
         return result;
     }
 
     @RequestMapping("/browse/getInfoByArea")
-    public Result getInfoByArea(HttpServletRequest request) {
-        Result result = new Result();
+    public Result getInfoByArea(String area) {
 
-        String hashKey = request.getParameter("area");
-        if (hashKey == null || "".equals(hashKey)) {
-            result.setStatus(Status.WRONG_REQUEST);
-            result.setDescription("need parameter area");
-            return result;
+        if (area == null || "".equals(area)) {
+            return Result.createByWrongRequest("need parameter area");
         }
 
         List<Information> list;
-        if (RedisUtil.hasKey(TokenUtil.AREA, hashKey)) {
-            list = JsonUtil.string2Obj((String) RedisUtil.getMapValue(TokenUtil.AREA, hashKey), List.class, Information.class);
+        if (RedisUtil.hasKey(TokenUtil.AREA, area)) {
+            list = JsonUtil.string2Obj((String) RedisUtil.getMapValue(TokenUtil.AREA, area), List.class, Information.class);
         } else {
             Map<String, Object> params = new HashMap<>();
-            params.put("area", hashKey);
+            params.put("area", area);
             list = infoService.getInfoByMap(params);
-            RedisUtil.putMapValue(TokenUtil.AREA, hashKey, JsonUtil.obj2String(list));
+            RedisUtil.putMapValue(TokenUtil.AREA, area, JsonUtil.obj2String(list));
         }
 
-        result.setStatus(Status.SUCCESS);
-        result.getResultMap().put(hashKey, list);
+        Result result = Result.createBySuccess();
+        result.getResultMap().put(area, list);
         return result;
     }
 
@@ -138,7 +110,7 @@ public class InfoController {
         Result result = new Result();
 
         Map<String, Object> params = new HashMap<>();
-        params.put("userId", userId);
+        params.put("user_id", userId);
         List<Information> list = infoService.getInfoByMap(params);
         if (list == null) {
             result.setStatus(Status.WRONG_REQUEST);
@@ -146,7 +118,7 @@ public class InfoController {
         } else {
             result.setStatus(Status.SUCCESS);
             result.setDescription("success");
-            result.getResultMap().put("info_list", list);
+            result.getResultMap().put(TokenUtil.INFOS, list);
         }
 
         return result;
@@ -160,11 +132,11 @@ public class InfoController {
      * @return
      */
     @RequestMapping("/getInfoByPage")
-    public Result getInfoByPage(Integer index, String name, Object value) {
+    public Result getInfoByPage(Integer index, String name, String value) {
         Result result = new Result();
         List<Information> cur = infoService.getInfoByPage(index, 10, name, value);
 
-        result.getResultMap().put("info_list", cur);
+        result.getResultMap().put(TokenUtil.INFOS, cur);
         if (cur == null || cur.size() == 0) {
             result.setStatus(Status.DEFAULT);
             result.setDescription("数据为空");
@@ -195,7 +167,7 @@ public class InfoController {
     public Result deleteInfo(Integer infoId) {
         Result result = new Result();
         Map<String, Object> params = new HashMap<>();
-        params.put("infoId", infoId);
+        params.put("info_id", infoId);
         infoService.deleteInfoByMap(params);
 
         result.setStatus(Status.SUCCESS);

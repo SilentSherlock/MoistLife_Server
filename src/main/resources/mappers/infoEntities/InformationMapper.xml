@@ -25,7 +25,7 @@
     </select>
     <select id="getByPage" resultMap="infoMap">
         select * from information
-        where ${name} = #{value};
+        where ${name} = #{value}
     </select>
     <delete id="delete">
         delete from information

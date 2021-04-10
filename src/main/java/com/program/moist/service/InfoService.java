@@ -76,11 +76,15 @@ public class InfoService {
      * @param value 查询列值
      * @return
      */
-    public List<Information> getInfoByPage(Integer index, Integer size, String name, Object value) {
+    public List<Information> getInfoByPage(Integer index, Integer size, String name, String value) {
         Page<Information> page = new Page<>(index, size);
         String method = "getInfoByPage-";
         log.info(TAG + method);
-        IPage<Information> result = informationDao.getByPage(page, name, value);
+        IPage<Information> result;
+        if (name.endsWith("id")) {
+            result = informationDao.getByPage(page, name, Integer.parseInt(value));
+        } else result = informationDao.getByPage(page, name, value);
+        if (result == null) log.warn(TAG + method + "get nothing");
         return result.getRecords();
     }
     /**

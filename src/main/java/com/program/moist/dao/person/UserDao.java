@@ -2,6 +2,7 @@ package com.program.moist.dao.person;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.program.moist.entity.person.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,5 @@ public interface UserDao extends BaseMapper<User> {
     Integer checkByIN(String IN);
 
     User getUser(Integer userId);
+    Integer updateColumnById(@Param("name") String name, @Param("value") Object value, @Param("id") Integer userId);
 }

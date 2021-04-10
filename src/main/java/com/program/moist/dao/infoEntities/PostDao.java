@@ -16,5 +16,6 @@ import java.util.List;
  */
 public interface PostDao extends BaseMapper<Post> {
     List<Post> getByIds(List<Integer> ids);
-    IPage<Post> getByPage(Page<Post> page, @Param("name") String name, @Param("value") Object value);
+    IPage<Post> getByPage(Page<Post> page, @Param("name") String name, @Param("value") String value);
+    IPage<Post> getByPage(Page<Post> page, @Param("name") String name, @Param("value") Integer value);
 }

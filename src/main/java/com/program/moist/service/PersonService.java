@@ -46,11 +46,12 @@ public class PersonService {
 
     /**
      *
-     * @param fromId
+     * @param follow
      */
-    public void deleteFollow(Integer fromId) {
+    public void deleteFollow(Follow follow) {
         Map<String, Object> params = new HashMap<>();
-        params.put("from_user_id", fromId);
+        params.put("from_user_id", follow.getFromUserId());
+        params.put("to_user_id", follow.getToUserId());
         int result = followDao.deleteByMap(params);
         if (result == 0) log.info("delete no effect");
         else log.info("delete " + result + " follows");
@@ -167,6 +168,17 @@ public class PersonService {
     //region user crud
 
     /**
+     *
+     * @param name
+     * @param value
+     * @param userId
+     */
+    public void updateUserColumnById(String name, Object value, Integer userId) {
+        int result = userDao.updateColumnById(name, value, userId);
+        if (result == 0) log.warn("update user column failed or no use");
+        else log.info("update column success, " + result + " rows effected");
+    }
+    /**
      * @param user
      */
     public void addUser(User user) {
@@ -270,12 +282,15 @@ public class PersonService {
         switch (type) {
             case 0:
                 res = userDao.checkByEmail(msg);
+                log.info("checking email " + res);
                 break;
             case 1:
                 res = userDao.checkByPhone(msg);
+                log.info("checking phone " + res);
                 break;
             case 2:
                 res = userDao.checkByIN(msg);
+                log.info("checking identify number " + res);
                 break;
             default:
                 log.info("checkMsg get wrong type");
