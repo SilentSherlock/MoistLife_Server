@@ -29,6 +29,7 @@ public class TokenUtil {
     public static final String PATHS = "paths";
     public static final String PATH = "path";
     public static final String COMMENTS = "comments";
+    public static final String VALIDATE_CODE = "validate_code";
 
     public static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "").toLowerCase();

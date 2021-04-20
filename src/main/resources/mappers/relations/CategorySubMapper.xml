@@ -5,6 +5,6 @@
     </resultMap>
 
     <select id="getAll" resultMap="categorySubMap">
-        select * from categorysub;
+        select * from category_sub;
     </select>
 </mapper> 

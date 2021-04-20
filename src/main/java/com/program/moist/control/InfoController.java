@@ -149,7 +149,7 @@ public class InfoController {
     @RequestMapping("/addInfo")
     public Result addInfo(Information information) {
         Result result = new Result();
-        System.out.println(information.toString());
+        //System.out.println(information.toString());
         infoService.addInfo(information);
         result.setStatus(Status.SUCCESS);
         return result;

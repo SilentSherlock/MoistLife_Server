@@ -4,6 +4,6 @@
     <resultMap id="topicSubMap" type="com.program.moist.entity.relations.TopicSub" autoMapping="true">
     </resultMap>
     <select id="getAll" resultMap="topicSubMap">
-        select * from topicsub;
+        select * from topic_sub;
     </select>
 </mapper>

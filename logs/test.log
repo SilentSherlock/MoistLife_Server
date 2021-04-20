@@ -1,0 +1,19 @@
+2021-04-20 22:10:16,053 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-04-20 22:10:16,151 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-04-20 22:10:16,463 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 21336 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-04-20 22:10:16,465 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-04-20 22:10:17,443 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-04-20 22:10:17,443 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-04-20 22:10:17,443 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-04-20 22:10:17,495 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-04-20 22:10:17,770 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-04-20 22:10:17,879 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-04-20 22:10:17,898 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-04-20 22:10:17,916 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-04-20 22:10:17,932 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-04-20 22:10:17,949 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-04-20 22:10:17,966 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-04-20 22:10:17,986 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-04-20 22:10:19,187 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-04-20 22:10:19,210 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.051 seconds (JVM running for 3.891) 
+2021-04-20 22:10:19,212 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 

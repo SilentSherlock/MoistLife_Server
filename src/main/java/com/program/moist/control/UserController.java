@@ -3,11 +3,9 @@ package com.program.moist.control;
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
 import com.program.moist.service.FileService;
+import com.program.moist.service.MailService;
 import com.program.moist.service.PersonService;
-import com.program.moist.utils.RedisUtil;
-import com.program.moist.utils.Result;
-import com.program.moist.utils.Status;
-import com.program.moist.utils.TokenUtil;
+import com.program.moist.utils.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,6 +30,9 @@ public class UserController {
     private PersonService personService;
     @Resource
     private FileService fileService;
+    @Resource
+    private MailService mailService;
+
     /**
      * 用户登录
      * @param account 可以是邮箱也可以是手机号
@@ -74,17 +75,29 @@ public class UserController {
 
     /**
      * 用户注册
-     * @param user
+     * @param account
+     * @param password
+     * @param validateCode
+     * @param type
      * @return
      */
     @RequestMapping("/before/register")
-    public Result userRegister(User user) {
-        Result result = new Result();
+    public Result userRegister(String account, String password, String validateCode, Integer type) {
 
+        if (!validateCode.equals(RedisUtil.getMapValue(TokenUtil.VALIDATE_CODE, account))) return Result.createByFalse("验证码错误");
+
+        RedisUtil.deleteMap(TokenUtil.VALIDATE_CODE, account);
+        User user = new User();
+        user.setPassword(password);
+        user.setUserName(TokenUtil.USER + account);
+        user.setUserKind(ConstUtil.U_DEFAULT);
+        if (type == 0) user.setEmail(account);
+        else user.setPhoneNumber(account);
         personService.addUser(user);
+
+        Result result = Result.createBySuccess("注册成功");
         String login_token = TokenUtil.getUUID();
         RedisUtil.putMapValue(TokenUtil.LOGIN_TOKEN, login_token, user);
-        result.setDescription("注册成功");
         result.getResultMap().put(TokenUtil.LOGIN_TOKEN, login_token);
         //result.getResultMap().put(TokenUtil.USER, user);
 
@@ -128,6 +141,25 @@ public class UserController {
         }
 
         return result;
+    }
+
+    /**
+     * 发送账户验证码
+     * @param account
+     * @param type 0-email 1-phone
+     * @return
+     */
+    @RequestMapping("/before/accountValidateCode")
+    public Result getValidateCode(String account, Integer type) {
+        if (type == null || account == null) return Result.createByWrongRequest();
+
+        String code = TokenUtil.getUUID().substring(0, 6);
+        if (type == 0) {
+            mailService.sendMsg(account, "邮箱验证", "您的验证码是" + code + ", 请勿回复此邮件");
+            RedisUtil.putMapValue(TokenUtil.VALIDATE_CODE, account, code);
+            return Result.createBySuccess();
+        }
+        return Result.createByFalse();
     }
 
     @RequestMapping("/addFollow")

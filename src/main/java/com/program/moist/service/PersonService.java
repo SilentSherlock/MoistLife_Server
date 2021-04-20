@@ -295,7 +295,7 @@ public class PersonService {
             default:
                 log.info("checkMsg get wrong type");
         }
-        return res == null;
+        return res == null || res == 0;
     }
     //endregion
 }
