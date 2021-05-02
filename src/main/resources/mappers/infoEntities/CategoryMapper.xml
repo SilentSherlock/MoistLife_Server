@@ -7,4 +7,8 @@
     <select id="getAll" resultMap="categoryMap">
         select * from Category
     </select>
+    <select id="getTopCate" resultMap="categoryMap">
+        select  * from category
+        where parent_cate_id = 0;
+    </select>
 </mapper> 

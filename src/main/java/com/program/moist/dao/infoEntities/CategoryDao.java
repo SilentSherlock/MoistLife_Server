@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface CategoryDao extends BaseMapper<Category> {
     List<Category> getAll();
+    List<Category> getTopCate();
 }

@@ -29,7 +29,7 @@ public class FileService {
      * @param path 路径需要提前根据用户id，上传图片归属进行拼接
      * @return 文件在ftp服务器的绝对路径，eg.ftp://ip/data/xx/xx.jpg
      */
-    public String upload(MultipartFile file, String path) {
+    public String upload(MultipartFile file, String path, String newFileName) {
         File uploadFilePath;
         try {
             String uploadPath = createTargetDir(path);
@@ -39,7 +39,7 @@ public class FileService {
                 return null;
             }
             String exName = fileName.substring(fileName.lastIndexOf("."));
-            uploadFilePath = new File(uploadPath + TokenUtil.getUUID() + exName);
+            uploadFilePath = new File(uploadPath + newFileName + exName);
             file.transferTo(uploadFilePath);//上传到项目中暂存
             FTPUtil.upload(path, uploadFilePath);//上传到ftp服务器
             uploadFilePath.delete();

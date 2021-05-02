@@ -56,7 +56,7 @@ public class InfoController {
         if (RedisUtil.hasKey(TokenUtil.CATEGORY)) {
             categories = JsonUtil.string2Obj(RedisUtil.getCommon(TokenUtil.CATEGORY), List.class, Category.class);
         } else {
-            categories = infoService.getAllCategory();
+            categories = infoService.getTopCategory();
             RedisUtil.setCommon(TokenUtil.CATEGORY, JsonUtil.obj2String(categories));
         }
 

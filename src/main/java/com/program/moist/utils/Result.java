@@ -84,4 +84,14 @@ public class Result {
     public static Result createByWrongRequest() {
         return Result.createByWrongRequest("");
     }
+
+    public static Result createByNotFound(String msg) {
+        Result result = new Result(Status.NOT_FOUND);
+        result.setDescription(msg);
+        return result;
+    }
+
+    public static Result createByNotFound() {
+        return Result.createByNotFound("");
+    }
 }

@@ -229,9 +229,9 @@ public class InfoService {
      *
      * @return
      */
-    public List<Category> getAllCategory() {
+    public List<Category> getTopCategory() {
         try {
-            return categoryDao.getAll();
+            return categoryDao.getTopCate();
         } catch (Exception e) {
             log.error(TAG + "get all category failed", e);
             return null;

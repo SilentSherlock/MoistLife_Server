@@ -21,4 +21,5 @@ public class User {
     private String identifyNumber;
     private Integer userKind;
     private String userAvatar;
+    private String userBackground;
 }

@@ -43,6 +43,7 @@ public class UserController {
     @RequestMapping("/before/login")
     public Result userLogin(String account, String password, Integer type) {
         Result result = new Result();
+        if (personService.checkMsg(account, type)) return Result.createByNotFound();
         User user;
         switch (type) {
             case 0:
@@ -57,18 +58,14 @@ public class UserController {
                 return result;
         }
 
-        if (user == null) {
-            result.setStatus(Status.NOT_FOUND);
-            result.setDescription("用户不存在");
-            return result;
-        }
+        if (user == null) return Result.createByFalse();
 
         String login_token = TokenUtil.getUUID();
         RedisUtil.putMapValue(TokenUtil.LOGIN_TOKEN, login_token, user);
         result.setStatus(Status.SUCCESS);
         result.setDescription("登录成功");
         result.getResultMap().put(TokenUtil.LOGIN_TOKEN, login_token);
-        //result.getResultMap().put(TokenUtil.USER, user);
+        result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
     }
@@ -99,7 +96,7 @@ public class UserController {
         String login_token = TokenUtil.getUUID();
         RedisUtil.putMapValue(TokenUtil.LOGIN_TOKEN, login_token, user);
         result.getResultMap().put(TokenUtil.LOGIN_TOKEN, login_token);
-        //result.getResultMap().put(TokenUtil.USER, user);
+        result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
     }
@@ -218,12 +215,20 @@ public class UserController {
         return result;
     }
 
-    @RequestMapping("/addAvatar")
-    public Result addAvatar(@RequestParam("avatar") MultipartFile file, Integer userId) {
+    /**
+     * 上传图片
+     * @param file
+     * @param userId
+     * @param type 0-avatar 1-background
+     * @return
+     */
+    @RequestMapping("/addImage")
+    public Result addImage(@RequestParam("image") MultipartFile file, Integer userId, Integer type) {
         Result result = new Result();
-        String path = userId + "/avatar/";
-        String filePath = fileService.upload(file, path);
-        personService.updateUserColumnById("user_avatar", filePath, userId);//此是列名
+        String path = userId + (type == 0 ? "/avatar/" : "/background/");
+        String filePath = fileService.upload(file, path, String.valueOf(userId));
+        String column = type == 0 ? "user_avatar" : "user_background";
+        personService.updateUserColumnById(column, filePath, userId);//此是列名
         result.setStatus(Status.SUCCESS);
         result.getResultMap().put(TokenUtil.PATH, filePath);
 

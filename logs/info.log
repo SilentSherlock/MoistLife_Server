@@ -1,341 +1,542 @@
-2021-04-20 10:58:51,912 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 10:58:52,052 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 10:58:52,362 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 7312 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-04-20 10:58:52,362 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-04-20 10:58:53,632 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 10:58:53,632 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-04-20 10:58:53,632 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-04-20 10:58:53,700 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-04-20 10:58:54,052 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-04-20 10:58:54,222 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
-2021-04-20 10:58:54,232 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-04-20 10:58:54,252 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-04-20 10:58:54,272 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
-2021-04-20 10:58:54,286 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-04-20 10:58:54,299 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-04-20 10:58:54,312 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
-2021-04-20 10:58:55,602 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 10:58:55,627 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.567 seconds (JVM running for 4.626) 
-2021-04-20 10:58:55,630 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-04-20 10:58:55,731 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-04-20 11:07:54,402 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:07:54,420 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:07:54,421 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)18700833062-1- 
-2021-04-20 11:07:54,421 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:07:54,441 [http-nio-0.0.0.0-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
-2021-04-20 11:07:54,695 [http-nio-0.0.0.0-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
-2021-04-20 11:07:54,735 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.service.PersonService : checking phone 0 
-2021-04-20 11:07:54,736 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:07:54,738 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-FALSE-Msg-信息重复} 
-2021-04-20 11:07:54,739 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:07:54,749 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:07:54,749 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 11:34:51,186 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:34:51,187 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:34:51,187 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)18700833062-1- 
-2021-04-20 11:34:51,187 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:34:51,190 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.service.PersonService : checking phone 0 
-2021-04-20 11:34:51,190 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:34:51,190 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : Result {Code-FALSE-Msg-信息重复} 
-2021-04-20 11:34:51,190 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:34:51,191 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:34:51,191 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 11:35:37,628 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:35:37,629 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:35:37,629 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)18700833062@qq.com-0- 
-2021-04-20 11:35:37,630 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:35:37,633 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 11:35:37,633 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:35:37,633 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-FALSE-Msg-信息重复} 
-2021-04-20 11:35:37,633 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:35:37,634 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:35:37,634 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 11:36:08,680 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:36:08,681 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:36:08,681 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)121212121@qq.com-0- 
-2021-04-20 11:36:08,681 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:36:08,684 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 11:36:08,684 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:36:08,684 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-FALSE-Msg-信息重复} 
-2021-04-20 11:36:08,684 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:36:08,685 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:36:08,685 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 11:38:02,945 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 11:38:03,043 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 11:38:03,330 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 15136 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-04-20 11:38:03,332 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-04-20 11:38:04,290 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 11:38:04,290 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-04-20 11:38:04,291 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-04-20 11:38:04,342 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-04-20 11:38:04,606 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-04-20 11:38:04,741 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
-2021-04-20 11:38:04,761 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-04-20 11:38:04,779 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-04-20 11:38:04,798 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
-2021-04-20 11:38:04,821 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-04-20 11:38:04,839 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-04-20 11:38:04,858 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
-2021-04-20 11:38:06,001 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 11:38:06,023 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 2.973 seconds (JVM running for 3.811) 
-2021-04-20 11:38:06,026 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-04-20 11:38:09,633 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-04-20 11:38:09,641 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:38:09,657 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:38:09,658 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)121212121@qq.com-0- 
-2021-04-20 11:38:09,659 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:38:09,675 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
-2021-04-20 11:38:09,872 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
-2021-04-20 11:38:09,899 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 11:38:09,899 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:38:09,902 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 11:38:09,903 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:38:09,958 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:38:09,959 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 11:43:24,331 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 11:43:24,332 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 11:43:24,332 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)121sd212121@qq.com-0- 
-2021-04-20 11:43:24,332 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 11:43:24,336 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 11:43:24,336 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 11:43:24,336 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 11:43:24,336 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 11:43:24,337 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 11:43:24,337 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 12:39:21,331 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 12:39:21,331 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 12:39:21,331 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)dfjakfk@qq.com-0- 
-2021-04-20 12:39:21,331 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 12:39:21,341 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 12:39:21,341 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 12:39:21,342 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 12:39:21,342 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 12:39:21,343 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 12:39:21,343 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 12:39:40,446 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 12:39:40,447 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 12:39:40,447 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)dfjakfk@qq.com-0- 
-2021-04-20 12:39:40,447 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 12:39:40,448 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 12:39:40,449 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 12:39:40,449 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 12:39:40,449 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 12:39:40,449 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 12:39:40,450 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 12:39:44,698 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 12:39:44,699 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 12:39:44,699 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)dfjakfk@qq.com-0- 
-2021-04-20 12:39:44,699 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 12:39:44,701 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 12:39:44,701 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 12:39:44,701 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 12:39:44,701 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 12:39:44,702 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 12:39:44,702 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 15:20:33,461 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 15:20:33,558 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 15:20:33,880 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 7300 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-04-20 15:20:33,883 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-04-20 15:20:34,879 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 15:20:34,880 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-04-20 15:20:34,880 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-04-20 15:20:34,933 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-04-20 15:20:35,207 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-04-20 15:20:35,313 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
-2021-04-20 15:20:35,333 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-04-20 15:20:35,351 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-04-20 15:20:35,367 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
-2021-04-20 15:20:35,383 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-04-20 15:20:35,398 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-04-20 15:20:35,417 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
-2021-04-20 15:20:36,579 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 15:20:36,602 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.036 seconds (JVM running for 3.864) 
-2021-04-20 15:20:36,604 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-04-20 15:22:19,404 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-04-20 15:22:19,427 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 15:22:19,429 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 15:22:19,429 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 15:22:38,410 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 15:22:38,419 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 15:22:38,420 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 15:22:38,420 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 15:22:39,801 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 15:22:39,805 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 15:22:39,805 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 15:22:39,816 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 15:22:39,816 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 15:23:27,692 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 15:23:27,692 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 15:23:27,692 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 15:23:27,692 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 15:23:28,795 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 15:23:28,795 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 15:23:28,795 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 15:23:28,796 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 15:23:28,796 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 15:49:18,674 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 15:49:18,675 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 15:49:18,675 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 15:49:18,675 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 15:49:18,690 [http-nio-0.0.0.0-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
-2021-04-20 15:49:18,981 [http-nio-0.0.0.0-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
-2021-04-20 15:49:19,008 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 15:49:19,008 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 15:49:19,008 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 15:49:19,008 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 15:49:19,009 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 15:49:19,009 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 15:49:23,654 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 15:49:23,655 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 15:49:23,655 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 15:49:23,655 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 15:49:24,734 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 15:49:24,734 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 15:49:24,734 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 15:49:24,735 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 15:49:24,736 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:46:53,730 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:46:53,735 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:46:53,736 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:46:53,736 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 16:46:53,745 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 16:46:53,746 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:46:53,746 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 16:46:53,746 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:46:53,750 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:46:53,751 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:46:56,398 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:46:56,398 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:46:56,398 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:46:56,399 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 16:46:57,448 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:46:57,448 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 16:46:57,448 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:46:57,449 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:46:57,449 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:47:05,323 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:47:05,324 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:47:05,324 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:47:05,324 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 16:47:05,326 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 16:47:05,326 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:47:05,326 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 16:47:05,326 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:47:05,327 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:47:05,328 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:47:25,406 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:47:25,406 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:47:25,406 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:47:25,406 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 16:47:26,334 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:47:26,334 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 16:47:26,334 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:47:26,335 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:47:26,335 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:49:27,423 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:49:27,423 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:49:27,423 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:49:27,423 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 16:49:27,425 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 16:49:27,425 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:49:27,426 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 16:49:27,426 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:49:27,426 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:49:27,426 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 16:49:28,177 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 16:49:28,178 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 16:49:28,178 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 16:49:28,178 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 16:49:29,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 16:49:29,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 16:49:29,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 16:49:29,334 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 16:49:29,334 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 17:02:44,383 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 17:02:44,383 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 17:02:44,383 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 17:02:44,383 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 17:02:44,385 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 17:02:44,385 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 17:02:44,385 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 17:02:44,385 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 17:02:44,386 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 17:02:44,386 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 17:02:44,407 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 17:02:44,407 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 17:02:44,407 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 17:02:44,407 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 17:02:45,558 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 17:02:45,558 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 17:02:45,558 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 17:02:45,559 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 17:02:45,559 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 22:03:01,496 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 22:03:01,643 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
-2021-04-20 22:03:01,978 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 4968 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
-2021-04-20 22:03:01,981 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
-2021-04-20 22:03:03,200 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 22:03:03,200 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
-2021-04-20 22:03:03,201 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
-2021-04-20 22:03:03,261 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
-2021-04-20 22:03:03,593 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
-2021-04-20 22:03:03,714 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
-2021-04-20 22:03:03,734 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
-2021-04-20 22:03:03,753 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
-2021-04-20 22:03:03,772 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
-2021-04-20 22:03:03,796 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
-2021-04-20 22:03:03,818 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
-2021-04-20 22:03:03,836 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
-2021-04-20 22:03:05,137 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
-2021-04-20 22:03:05,161 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.51 seconds (JVM running for 4.567) 
-2021-04-20 22:03:05,163 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
-2021-04-20 22:06:15,506 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
-2021-04-20 22:06:15,513 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 22:06:15,529 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 22:06:15,530 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 22:06:15,530 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 22:06:15,546 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
-2021-04-20 22:06:15,842 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
-2021-04-20 22:06:15,885 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 22:06:15,885 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 22:06:15,891 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 22:06:15,891 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 22:06:15,930 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 22:06:15,930 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 22:06:15,955 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 22:06:15,955 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 22:06:15,955 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 22:06:15,955 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 22:06:17,189 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 22:06:17,189 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 22:06:17,190 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 22:06:17,191 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 22:06:17,191 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 22:06:39,073 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 22:06:39,073 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 22:06:39,073 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : UserController.userRegister(..)zhang.my1998@qq.com-zmywzn-88080d-0- 
-2021-04-20 22:06:39,073 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/register 
-2021-04-20 22:06:39,261 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 22:06:39,261 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : Result {Code-FALSE-Msg-验证码错误} 
-2021-04-20 22:06:39,261 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 22:06:39,263 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 22:06:39,263 [http-nio-0.0.0.0-8080-exec-2] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 22:09:56,731 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 22:09:56,731 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 22:09:56,731 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : UserController.checkMsg(..)zhang.my1998@qq.com-0- 
-2021-04-20 22:09:56,732 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/check 
-2021-04-20 22:09:56,734 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.service.PersonService : checking email 0 
-2021-04-20 22:09:56,734 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 22:09:56,734 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-信息未重复} 
-2021-04-20 22:09:56,735 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 22:09:56,735 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 22:09:56,735 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
-2021-04-20 22:09:56,742 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
-2021-04-20 22:09:56,742 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
-2021-04-20 22:09:56,743 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : UserController.getValidateCode(..)zhang.my1998@qq.com-0- 
-2021-04-20 22:09:56,743 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/user/before/accountValidateCode 
-2021-04-20 22:09:57,842 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
-2021-04-20 22:09:57,843 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
-2021-04-20 22:09:57,843 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
-2021-04-20 22:09:57,844 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
-2021-04-20 22:09:57,844 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 09:59:23,375 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 09:59:23,545 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 09:59:23,926 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 7380 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-05-02 09:59:23,928 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-05-02 09:59:25,153 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 09:59:25,154 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-05-02 09:59:25,154 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-05-02 09:59:25,212 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-05-02 09:59:25,556 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-05-02 09:59:25,676 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-05-02 09:59:25,699 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-05-02 09:59:25,720 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-05-02 09:59:25,740 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-05-02 09:59:25,757 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-05-02 09:59:25,780 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-05-02 09:59:25,804 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-05-02 09:59:27,151 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 09:59:27,177 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.625 seconds (JVM running for 4.958) 
+2021-05-02 09:59:27,179 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-05-02 11:03:26,676 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-05-02 11:03:26,696 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 11:03:26,705 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 11:03:26,707 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 11:03:26,708 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 11:03:26,919 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021-05-02 11:03:27,231 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021-05-02 11:03:27,583 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 11:03:27,587 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 11:03:27,587 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 11:03:27,613 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 11:03:27,613 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 11:15:13,042 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 11:15:13,042 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 11:15:13,042 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 11:15:13,043 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 11:15:13,559 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 11:15:13,559 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 11:15:13,559 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 11:15:13,562 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 11:15:13,562 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 11:21:16,935 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 11:21:16,935 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 11:21:16,936 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 11:21:16,936 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 11:21:17,406 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 11:21:17,406 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 11:21:17,407 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 11:21:17,409 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 11:21:17,409 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 11:24:25,805 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 11:24:25,805 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 11:24:25,805 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 11:24:25,805 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 11:24:26,249 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 11:24:26,249 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 11:24:26,249 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 11:24:26,252 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 11:24:26,252 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 11:27:40,665 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 11:27:40,665 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 11:27:40,665 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 11:27:40,665 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 11:27:41,141 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 11:27:41,141 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 11:27:41,141 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 11:27:41,143 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 11:27:41,144 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:19:48,846 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:19:48,846 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:19:48,846 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:19:48,846 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:19:49,318 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:19:49,318 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:19:49,318 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:19:49,321 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:19:49,321 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:28:47,820 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:28:47,820 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:28:47,820 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:28:47,820 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:28:48,261 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:28:48,262 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:28:48,262 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:28:48,264 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:28:48,264 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:30:58,844 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:30:58,845 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:30:58,845 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:30:58,845 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:30:59,280 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:30:59,280 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:30:59,280 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:30:59,283 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:30:59,283 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:32:21,775 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:32:21,775 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:32:21,776 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:32:21,776 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:32:22,220 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:32:22,220 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:32:22,220 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:32:22,223 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:32:22,223 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:34:25,120 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:34:25,121 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:34:25,121 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:34:25,121 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:34:25,563 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:34:25,564 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:34:25,564 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:34:25,566 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:34:25,566 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:37:16,597 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:37:16,598 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:37:16,598 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:37:16,598 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:37:17,045 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:37:17,045 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:37:17,045 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:37:17,048 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:37:17,048 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:47:39,814 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:47:39,814 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:47:39,814 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:47:39,814 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:47:40,266 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:47:40,266 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:47:40,266 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:47:40,269 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:47:40,269 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 12:50:14,612 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 12:50:14,612 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 12:50:14,612 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 12:50:14,612 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 12:50:15,073 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 12:50:15,074 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 12:50:15,074 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 12:50:15,076 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 12:50:15,076 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:00:12,856 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:00:12,857 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:00:12,857 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:00:12,857 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:00:13,313 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:00:13,313 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:00:13,313 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:00:13,316 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:00:13,316 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:04:57,793 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:04:57,793 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:04:57,793 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:04:57,793 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:04:58,232 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:04:58,232 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:04:58,232 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:04:58,233 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:04:58,233 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:07:05,541 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:07:05,543 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:07:05,543 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:07:05,543 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:07:06,011 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:07:06,011 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:07:06,011 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:07:06,014 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:07:06,014 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:07:15,093 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:07:15,093 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:07:15,093 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:07:15,093 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:07:15,512 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:07:15,512 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:07:15,512 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:07:15,514 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:07:15,514 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:11:43,091 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:11:43,092 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:11:43,092 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:11:43,092 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:11:43,564 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:11:43,564 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:11:43,565 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:11:43,567 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:11:43,567 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:11:52,259 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:11:52,259 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:11:52,259 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:11:52,259 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:11:52,710 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:11:52,710 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:11:52,710 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:11:52,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:11:52,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 13:12:32,858 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 13:12:32,859 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 13:12:32,859 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 13:12:32,859 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 13:12:33,313 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 13:12:33,314 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 13:12:33,314 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 13:12:33,316 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 13:12:33,316 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 14:34:41,578 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 14:34:41,578 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 14:34:41,578 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 14:34:41,578 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 14:34:42,020 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 14:34:42,021 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 14:34:42,021 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 14:34:42,023 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 14:34:42,023 [http-nio-0.0.0.0-8080-exec-10] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 15:11:44,864 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 15:11:44,864 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 15:11:44,865 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 15:11:44,865 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 15:11:45,337 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 15:11:45,337 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 15:11:45,337 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 15:11:45,339 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 15:11:45,339 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 19:57:48,513 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 19:57:48,610 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 19:57:48,953 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 14076 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-05-02 19:57:48,953 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-05-02 19:57:49,970 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 19:57:49,970 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-05-02 19:57:49,970 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-05-02 19:57:50,031 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-05-02 19:57:50,332 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-05-02 19:57:50,463 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-05-02 19:57:50,478 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-05-02 19:57:50,494 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-05-02 19:57:50,510 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-05-02 19:57:50,525 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-05-02 19:57:50,557 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-05-02 19:57:50,573 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-05-02 19:57:51,794 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 19:57:51,826 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.198 seconds (JVM running for 4.123) 
+2021-05-02 19:57:51,826 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-05-02 20:28:10,213 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-05-02 20:28:10,224 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:28:10,230 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:28:10,232 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:28:10,232 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:28:10,719 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:28:10,722 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:28:10,723 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:28:10,758 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:28:10,759 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:28:33,993 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:28:33,994 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:28:33,994 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:28:33,994 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:28:34,437 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:28:34,438 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:28:34,438 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:28:34,441 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:28:34,441 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:28:43,014 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:28:43,014 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:28:43,014 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:28:43,014 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:28:43,455 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:28:43,455 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:28:43,455 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:28:43,458 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:28:43,458 [http-nio-0.0.0.0-8080-exec-4] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:30:42,833 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:30:42,833 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:30:42,833 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:30:42,834 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:30:43,272 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:30:43,272 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:30:43,272 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:30:43,275 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:30:43,275 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:36:56,344 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:36:56,345 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:36:56,345 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:36:56,345 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:36:56,784 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:36:56,784 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:36:56,784 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:36:56,787 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:36:56,787 [http-nio-0.0.0.0-8080-exec-7] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:40:30,161 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:40:30,161 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:40:30,161 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:40:30,161 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:40:30,608 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:40:30,608 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:40:30,609 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:40:30,611 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:40:30,611 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:40:43,753 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:40:43,753 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:40:43,753 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:40:43,754 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:40:44,199 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:40:44,199 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:40:44,199 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:40:44,202 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:40:44,202 [http-nio-0.0.0.0-8080-exec-9] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:40:53,442 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 20:40:53,538 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 20:40:53,888 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 16452 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-05-02 20:40:53,890 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-05-02 20:40:54,880 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 20:40:54,880 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-05-02 20:40:54,881 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-05-02 20:40:54,931 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-05-02 20:40:55,216 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-05-02 20:40:55,359 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-05-02 20:40:55,378 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-05-02 20:40:55,397 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-05-02 20:40:55,414 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-05-02 20:40:55,432 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-05-02 20:40:55,449 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-05-02 20:40:55,467 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-05-02 20:40:56,668 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 20:40:56,692 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.146 seconds (JVM running for 4.016) 
+2021-05-02 20:40:56,694 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-05-02 20:41:47,597 [main] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 20:41:47,699 [restartedMain] INFO  com.program.moist.MoistApplication : 项目开始启动 
+2021-05-02 20:41:48,022 [restartedMain] INFO  com.program.moist.MoistApplication : Starting MoistApplication using Java 11 on YOGA-SherlockZ with PID 5380 (D:\programs\spring\MoistLife_Server\target\classes started by 15361 in D:\programs\spring\MoistLife_Server) 
+2021-05-02 20:41:48,024 [restartedMain] INFO  com.program.moist.MoistApplication : No active profile set, falling back to default profiles: default 
+2021-05-02 20:41:49,034 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 20:41:49,034 [restartedMain] INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat] 
+2021-05-02 20:41:49,034 [restartedMain] INFO  org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021-05-02 20:41:49,085 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021-05-02 20:41:49,351 [restartedMain] WARN  com.baomidou.mybatisplus.core.injector.AbstractMethod : [com.program.moist.dao.infoEntities.InformationDao.delete] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Delete] 
+2021-05-02 20:41:49,491 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.CategorySub". 
+2021-05-02 20:41:49,514 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavInfo". 
+2021-05-02 20:41:49,532 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.FavPost". 
+2021-05-02 20:41:49,550 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.Follow". 
+2021-05-02 20:41:49,568 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpComment". 
+2021-05-02 20:41:49,586 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.ThumbUpPost". 
+2021-05-02 20:41:49,606 [restartedMain] WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper : Can not find table primary key in Class: "com.program.moist.entity.relations.TopicSub". 
+2021-05-02 20:41:50,829 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-0.0.0.0-8080"] 
+2021-05-02 20:41:50,852 [restartedMain] INFO  com.program.moist.MoistApplication : Started MoistApplication in 3.144 seconds (JVM running for 4.001) 
+2021-05-02 20:41:50,855 [restartedMain] INFO  com.program.moist.MoistApplication : 项目启动成功 
+2021-05-02 20:41:56,561 [http-nio-0.0.0.0-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-05-02 20:41:56,567 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:41:56,574 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:41:56,575 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:41:56,576 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:41:56,796 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021-05-02 20:41:57,093 [http-nio-0.0.0.0-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021-05-02 20:41:57,445 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:41:57,448 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:41:57,449 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:41:57,471 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:41:57,471 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 20:52:48,845 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 20:52:48,846 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 20:52:48,846 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 20:52:48,846 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 20:52:49,346 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 20:52:49,347 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 20:52:49,347 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 20:52:49,350 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 20:52:49,350 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:10:53,723 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:10:53,723 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:10:53,723 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:10:53,723 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:10:54,165 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:10:54,166 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:10:54,166 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:10:54,167 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:10:54,167 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:12:25,804 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:12:25,805 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:12:25,805 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:12:25,805 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:12:26,292 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:12:26,292 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:12:26,293 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:12:26,295 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:12:26,295 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:36:29,821 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:36:29,821 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:36:29,821 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:36:29,821 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:36:30,276 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:36:30,276 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:36:30,276 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:36:30,279 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:36:30,279 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:39:49,243 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:39:49,244 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:39:49,244 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:39:49,244 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:39:49,737 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:39:49,737 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:39:49,737 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:39:49,739 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:39:49,739 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:40:25,535 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:40:25,535 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:40:25,535 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:40:25,535 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:40:25,996 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:40:25,997 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:40:25,997 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:40:25,999 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:40:25,999 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:47:24,663 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:47:24,664 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:47:24,664 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:47:24,664 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:47:25,151 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:47:25,151 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:47:25,151 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:47:25,153 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:47:25,153 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:48:20,633 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:48:20,633 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:48:20,633 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:48:20,633 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:48:21,078 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:48:21,078 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:48:21,078 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:48:21,081 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:48:21,081 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:48:35,371 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:48:35,371 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:48:35,371 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:48:35,371 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:48:35,831 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:48:35,832 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:48:35,832 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:48:35,834 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:48:35,834 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:50:41,869 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:50:41,869 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:50:41,869 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:50:41,869 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:50:42,348 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:50:42,348 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:50:42,348 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:50:42,350 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:50:42,351 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:51:25,902 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:51:25,902 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:51:25,902 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:51:25,902 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:51:26,360 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:51:26,360 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:51:26,360 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:51:26,362 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:51:26,362 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:53:37,425 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:53:37,425 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:53:37,425 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:53:37,425 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:53:37,865 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:53:37,865 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:53:37,865 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:53:37,867 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:53:37,867 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:56:16,567 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:56:16,568 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:56:16,568 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:56:16,568 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:56:16,999 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:56:16,999 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:56:16,999 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:56:17,002 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:56:17,002 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:56:40,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:56:40,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:56:40,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:56:40,711 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:56:41,167 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:56:41,167 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:56:41,167 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:56:41,169 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:56:41,170 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:56:59,017 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:56:59,018 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:56:59,018 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:56:59,018 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:56:59,456 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:56:59,456 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:56:59,456 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:56:59,459 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:56:59,459 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:57:25,948 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:57:25,949 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:57:25,949 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:57:25,949 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:57:26,404 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:57:26,404 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:57:26,404 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:57:26,407 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:57:26,407 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:57:54,953 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:57:54,954 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:57:54,954 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:57:54,954 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:57:55,376 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:57:55,376 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:57:55,376 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:57:55,378 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:57:55,379 [http-nio-0.0.0.0-8080-exec-8] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:58:13,864 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:58:13,864 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:58:13,864 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:58:13,864 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:58:14,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:58:14,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:58:14,333 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:58:14,335 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:58:14,335 [http-nio-0.0.0.0-8080-exec-5] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:58:40,429 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:58:40,429 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:58:40,429 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:58:40,429 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:58:40,857 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:58:40,857 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:58:40,857 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:58:40,859 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:58:40,859 [http-nio-0.0.0.0-8080-exec-6] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:58:46,652 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:58:46,652 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:58:46,652 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:58:46,652 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:58:47,098 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:58:47,098 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:58:47,098 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:58:47,101 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:58:47,101 [http-nio-0.0.0.0-8080-exec-1] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
+2021-05-02 21:59:12,143 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-preHandle 
+2021-05-02 21:59:12,143 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : logBeforePoint开始执行 
+2021-05-02 21:59:12,143 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : InfoController.getAllCate() 
+2021-05-02 21:59:12,143 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : RequestURI-/info/browse/getAllCate 
+2021-05-02 21:59:12,552 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : response执行结束 
+2021-05-02 21:59:12,552 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : Result {Code-SUCCESS-Msg-} 
+2021-05-02 21:59:12,552 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.log.LogAspect : 方法执行完成 
+2021-05-02 21:59:12,554 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-postHandle 
+2021-05-02 21:59:12,554 [http-nio-0.0.0.0-8080-exec-3] INFO  com.program.moist.others.interceptors.UserInterceptor : UserInterceptor-afterCompletion 
