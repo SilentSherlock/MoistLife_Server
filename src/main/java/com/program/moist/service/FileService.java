@@ -1,9 +1,19 @@
 package com.program.moist.service;
 
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.auth.sts.AssumeRoleRequest;
+import com.aliyuncs.auth.sts.AssumeRoleResponse;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.profile.IClientProfile;
+import com.program.moist.entity.StsToken;
 import com.program.moist.utils.ConstUtil;
 import com.program.moist.utils.FTPUtil;
+import com.program.moist.utils.MyPropertiesUtil;
 import com.program.moist.utils.TokenUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.PropertiesUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ResourceUtils;
@@ -13,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Date: 2021/4/3
@@ -22,6 +33,47 @@ import java.util.List;
 @Service
 @Slf4j
 public class FileService {
+
+    /**
+     * 云对象存储
+     * 获取StsToken
+     * @return
+     */
+    public StsToken getStsToken() {
+        try {
+            // 添加endpoint（直接使用STS endpoint，前两个参数留空，无需添加region ID）
+            DefaultProfile.addEndpoint("", "", "Sts", MyPropertiesUtil.getProperty("OSS.endpoint"));
+            // 构造default profile（参数留空，无需添加region ID）
+            IClientProfile profile = DefaultProfile.getProfile("", MyPropertiesUtil.getProperty("OSS.accessKeyId"), MyPropertiesUtil.getProperty("OSS.accessKeySecret"));
+            // 用profile构造client
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+            final AssumeRoleRequest request = new AssumeRoleRequest();
+            request.setMethod(MethodType.POST);
+            request.setRoleArn(MyPropertiesUtil.getProperty("OSS.roleArn"));
+            request.setRoleSessionName(MyPropertiesUtil.getProperty("OSS.roleSessionName"));
+//            request.setPolicy(policy); // 若policy为空，则用户将获得该角色下所有权限
+            request.setDurationSeconds(1000L); // 设置凭证有效时间
+            final AssumeRoleResponse response = client.getAcsResponse(request);
+            log.info("Expiration: " + response.getCredentials().getExpiration());
+            log.info("Access Key Id: " + response.getCredentials().getAccessKeyId());
+            log.info("Access Key Secret: " + response.getCredentials().getAccessKeySecret());
+            log.info("Security Token: " + response.getCredentials().getSecurityToken());
+            log.info("RequestId: " + response.getRequestId());
+
+            String key = response.getCredentials().getAccessKeyId();
+            String secret = response.getCredentials().getAccessKeySecret();
+            String token = response.getCredentials().getSecurityToken();
+
+            return new StsToken(key, secret, token);
+        } catch (ClientException e) {
+            System.out.println("Failed：");
+            System.out.println("Error code: " + e.getErrCode());
+            System.out.println("Error message: " + e.getErrMsg());
+            System.out.println("RequestId: " + e.getRequestId());
+
+            return null;
+        }
+    }
 
     /**
      * 单文件上传

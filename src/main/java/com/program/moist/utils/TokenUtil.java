@@ -30,6 +30,8 @@ public class TokenUtil {
     public static final String PATH = "path";
     public static final String COMMENTS = "comments";
     public static final String VALIDATE_CODE = "validate_code";
+    public static final String START_TIME = "start_time";
+    public static final String STS_TOKEN = "sts_token";
 
     public static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "").toLowerCase();

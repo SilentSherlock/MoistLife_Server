@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "OSS",
+      "type": "java.lang.String",
+      "description": "Description for OSS."
+  }
+] }

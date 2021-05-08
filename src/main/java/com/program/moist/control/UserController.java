@@ -1,5 +1,6 @@
 package com.program.moist.control;
 
+import com.program.moist.entity.StsToken;
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
 import com.program.moist.service.FileService;
@@ -141,6 +142,24 @@ public class UserController {
     }
 
     /**
+     *
+     * @param index 当前页码, 默认每页6个用户
+     * @param name
+     * @param value
+     * @return
+     */
+    @RequestMapping("/before/getUserByPage")
+    public Result getUser(Integer index, String name, String value) {
+        List<User> users = personService.getUserByPage(index, 6, name, value);
+        if (users == null || users.size() == 0) {
+            return Result.createByDefault();
+        }
+        Result result = Result.createBySuccess();
+        result.getResultMap().put(TokenUtil.USERS, users);
+        return result;
+    }
+
+    /**
      * 发送账户验证码
      * @param account
      * @param type 0-email 1-phone
@@ -242,5 +261,22 @@ public class UserController {
         result.getResultMap().put(TokenUtil.USER, user);
 
         return result;
+    }
+
+    @RequestMapping("/getStsToken")
+    public Result getStsToken() {
+        StsToken stsToken = fileService.getStsToken();
+        if (stsToken == null) {
+            return Result.createByFalse();
+        }
+        Result result = Result.createBySuccess();
+        result.getResultMap().put(TokenUtil.STS_TOKEN, stsToken);
+        return result;
+    }
+
+    @RequestMapping("/updateUser")
+    public Result updateUserColumn(String column, String value, Integer userId) {
+        personService.updateUserColumnById(column, value, userId);
+        return Result.createBySuccess();
     }
 }

@@ -26,8 +26,12 @@
     </select>
 
     <select id="getUser" resultMap="userMap">
-        select user_name, user_avatar, user_id from user
+        select user_name, user_avatar, user_id, location from user
         where user_id = #{userId}
+    </select>
+    <select id="getByPage" resultMap="userMap">
+        select * from user
+        where ${name} = #{value}
     </select>
 
     <update id="updateColumnById">

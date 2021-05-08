@@ -1,8 +1,11 @@
 package com.program.moist.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.program.moist.dao.person.AdminDao;
 import com.program.moist.dao.person.UserDao;
 import com.program.moist.dao.relations.FollowDao;
+import com.program.moist.entity.infoEntities.Information;
 import com.program.moist.entity.person.Admin;
 import com.program.moist.entity.person.User;
 import com.program.moist.entity.relations.Follow;
@@ -101,6 +104,26 @@ public class PersonService {
             ids.add(f.getFromUserId());
         }
         return userDao.getByIds(ids);
+    }
+
+    /**
+     * 分页查询用户
+     * @param index 查询页码
+     * @param size 一页用户数量
+     * @param name 查询列名
+     * @param value 查询列值
+     * @return
+     */
+    public List<User> getUserByPage(Integer index, Integer size, String name, String value) {
+        Page<User> page = new Page<>(index, size);
+        String method = "getUserByPage-";
+        log.info(TAG + method);
+        IPage<User> result;
+        if (name.endsWith("id") || name.endsWith("kind")) {
+            result = userDao.getByPage(page, name, Integer.parseInt(value));
+        } else result = userDao.getByPage(page, name, value);
+        if (result == null) log.warn(TAG + method + "get nothing");
+        return result.getRecords();
     }
     //endregion
 

@@ -22,4 +22,6 @@ public class User {
     private Integer userKind;
     private String userAvatar;
     private String userBackground;
+    private String location;
+    private String signature;
 }

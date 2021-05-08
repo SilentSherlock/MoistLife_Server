@@ -34,7 +34,7 @@ public class RedisUtil {
     @PostConstruct
     private void init() {
         redisUtil = this;
-        putMapValue(TokenUtil.LOGIN_TOKEN, TokenUtil.getUUID(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        putMapValue(TokenUtil.START_TIME, TokenUtil.getUUID(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         //expire(TokenUtil.LOGIN_TOKEN, Default_TIME);
     }
     //region key operations
