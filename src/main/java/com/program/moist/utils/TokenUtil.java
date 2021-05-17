@@ -2,7 +2,9 @@ package com.program.moist.utils;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.ResourceUtils;
 
+import java.io.FileNotFoundException;
 import java.util.UUID;
 
 /**
@@ -32,6 +34,20 @@ public class TokenUtil {
     public static final String VALIDATE_CODE = "validate_code";
     public static final String START_TIME = "start_time";
     public static final String STS_TOKEN = "sts_token";
+    public static String SEARCH_DIR = "";
+    public static final String DIVIDE = "Ψ";
+    public static final String POSTS = "posts";
+    public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    public static final String ONGOING = "ongoing";
+    public static final String FINISH = "finish";
+
+    static {
+        try {
+            SEARCH_DIR = ResourceUtils.getURL("classpath:").getPath() + "static/lucene/";
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "").toLowerCase();

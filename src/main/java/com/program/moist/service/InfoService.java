@@ -130,6 +130,18 @@ public class InfoService {
         log.info(TAG + name);
         return informationDao.selectByMap(map);
     }
+
+    public List<Information> getAllInfo() {
+        return informationDao.getAll();
+    }
+
+    public List<Information> getInfoByIds(List<Integer> ids) {
+        return informationDao.getByIds(ids);
+    }
+
+    public Integer getStatusCountByCateId(Integer cateId, Integer infoState) {
+        return informationDao.getStatusCountByCateId(cateId, infoState);
+    }
     //endregion
 
     //region favInfo crud

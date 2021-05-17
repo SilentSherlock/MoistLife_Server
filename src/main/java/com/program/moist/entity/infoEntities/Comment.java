@@ -2,7 +2,9 @@ package com.program.moist.entity.infoEntities;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.program.moist.utils.TokenUtil;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -20,6 +22,7 @@ public class Comment {
     private Integer toUserId;
     private Integer postId;
     private String content;
+    @DateTimeFormat(pattern = TokenUtil.DATE_FORMAT)
     private Date comTime;
     private Integer parentComId;
     private Integer comKind;

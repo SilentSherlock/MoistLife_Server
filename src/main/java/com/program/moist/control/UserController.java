@@ -274,9 +274,15 @@ public class UserController {
         return result;
     }
 
-    @RequestMapping("/updateUser")
+    @RequestMapping("/updateUserColumn")
     public Result updateUserColumn(String column, String value, Integer userId) {
         personService.updateUserColumnById(column, value, userId);
+        return Result.createBySuccess();
+    }
+
+    @RequestMapping("/updateUser")
+    public Result updateUser(User user) {
+        personService.updateUser(user);
         return Result.createBySuccess();
     }
 }

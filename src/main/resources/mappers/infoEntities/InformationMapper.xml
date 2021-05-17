@@ -27,6 +27,14 @@
         select * from information
         where ${name} = #{value}
     </select>
+    <select id="getAll" resultMap="infoMap">
+        select * from information;
+    </select>
+
+    <select id="getStatusCountByCateId" resultType="Integer">
+        select count(*) from information
+        where cate_id = #{cateId} and info_state = #{infoState}
+    </select>
     <delete id="delete">
         delete from information
         where info_id = #{info_id};

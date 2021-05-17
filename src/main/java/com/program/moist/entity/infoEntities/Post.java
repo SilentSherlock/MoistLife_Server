@@ -3,7 +3,9 @@ package com.program.moist.entity.infoEntities;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.program.moist.utils.TokenUtil;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -23,6 +25,7 @@ public class Post {
     private Integer topicId;
     private String detail;
     private String location;
+    @DateTimeFormat(pattern = TokenUtil.DATE_FORMAT)
     private Date postTime;
     private String postPictures;
     private Integer postState;

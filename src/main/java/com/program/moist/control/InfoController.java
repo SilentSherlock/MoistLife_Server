@@ -124,6 +124,66 @@ public class InfoController {
         return result;
     }
 
+    @RequestMapping("/browse/getCateById")
+    public Result getCateById(Integer cateId) {
+        if (cateId == null) return Result.createByFalse();
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate_id", cateId);
+        return getCateResult(params);
+    }
+
+    @RequestMapping("/browse/getChildCate")
+    public Result getChildCate(Integer parentCateId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("parent_cate_id", parentCateId);
+        List<Category> categories = infoService.getCateByMap(params);
+        if (categories == null || categories.size() == 0) {
+            return Result.createByNotFound();
+        } else {
+            Result result = Result.createBySuccess();
+            result.getResultMap().put(TokenUtil.CATEGORY, categories);
+            return result;
+        }
+    }
+
+    private Result getCateResult(Map<String, Object> params) {
+        List<Category> categories = infoService.getCateByMap(params);
+        if (categories == null || categories.size() == 0) {
+            return Result.createByNotFound();
+        } else {
+            Result result = Result.createBySuccess();
+            result.getResultMap().put(TokenUtil.CATEGORY, categories.get(0));
+            return result;
+        }
+    }
+
+    @RequestMapping("/browse/getInfoById")
+    public Result getInfoById(Integer infoId) {
+        if (infoId == null) return Result.createByFalse();
+        Map<String, Object> params = new HashMap<>();
+        params.put("info_id", infoId);
+        List<Information> information = infoService.getInfoByMap(params);
+        if (information == null || information.size() == 0) {
+            return Result.createByNotFound();
+        } else {
+            Result result = Result.createBySuccess();
+            result.getResultMap().put(TokenUtil.INFO, information.get(0));
+            return result;
+        }
+    }
+
+    @RequestMapping("/browse/getStatusCountByCateId")
+    public Result getStatusCount(Integer cateId) {
+        Integer ongoing = infoService.getStatusCountByCateId(cateId, 0);
+        Integer finish = infoService.getStatusCountByCateId(cateId, 1);
+        if (ongoing != null && finish != null) {
+            Result result = Result.createBySuccess();
+            result.getResultMap().put(TokenUtil.ONGOING, ongoing);
+            result.getResultMap().put(TokenUtil.FINISH, finish);
+            return result;
+        }
+        return Result.createByNotFound();
+    }
     /**
      * 分页获取
      * @param index 当前页面,固定10条数据
@@ -150,6 +210,7 @@ public class InfoController {
     public Result addInfo(Information information) {
         Result result = new Result();
         //System.out.println(information.toString());
+        information.setInfoState(0);
         infoService.addInfo(information);
         result.setStatus(Status.SUCCESS);
         return result;
@@ -193,7 +254,7 @@ public class InfoController {
         return result;
     }
 
-    @RequestMapping("/deleteFavInfo")
+    @RequestMapping("/deleteUserFavInfo")
     public Result deleteFavInfo(FavInfo favInfo) {
         Result result = new Result();
 

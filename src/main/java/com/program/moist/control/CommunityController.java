@@ -106,6 +106,25 @@ public class CommunityController {
         }
         return result;
     }
+
+    /**
+     * 根据属性分页获取 默认取5条
+     * @param index
+     * @param name
+     * @param value
+     * @return
+     */
+    @RequestMapping("/browse/getPostPage")
+    public Result getPostPage(Integer index, String name, String value) {
+        List<Post> posts = communityService.getPostByPage(index, 5, name, value);
+        if (posts == null || posts.size() == 0) {
+            return Result.createByNotFound("没有数据了");
+        } else {
+            Result result = Result.createBySuccess();
+            result.getResultMap().put(TokenUtil.POSTS, posts);
+            return result;
+        }
+    }
     /**
      * 用户登录之后的自动推荐，根据用户关注topic进行推荐
      * 如果为空，则推荐topic关注数最多的post

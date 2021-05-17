@@ -2,7 +2,10 @@ package com.program.moist.entity.infoEntities;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.program.moist.utils.TokenUtil;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -23,6 +26,9 @@ public class Information {
     private String detail;
     private String infoPictures;
     private Integer userId;
+    @DateTimeFormat(pattern = TokenUtil.DATE_FORMAT)
     private Date infoTime;
+    @DateTimeFormat(pattern = TokenUtil.DATE_FORMAT)
     private Date updateTime;
+    private Integer infoState;//0--正在寻找 1--已经结束
 }
